@@ -1,18 +1,135 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Title from '../components/Title.astro';
-import BlogPreview from '../components/BlogPreview.astro';
+import Layout from "../layouts/Layout.astro";
+import Title from "../components/Title.astro";
+import BlogPreview from "../components/BlogPreview.astro";
 let allpost = await Astro.glob("./posts/**/*.md");
 
-allpost = allpost.sort((fecha1, fecha2) => 
-new Date(fecha2.frontmatter.date).valueOf() -
-new Date(fecha1.frontmatter.date).valueOf()
-
-
+allpost = allpost.sort(
+	(fecha1, fecha2) =>
+		new Date(fecha2.frontmatter.date).valueOf() -
+		new Date(fecha1.frontmatter.date).valueOf(),
 );
 ---
 
-<Layout title='Hole Everyone!'>
-	<Title title="Hello Everyone!" title2="Welcome!" subtitle="Desarrollando con Astro!" />
-	{allpost.map((p)=> <BlogPreview post={p} />)}
-</Layout> 
+<Layout title="Hole Everyone!">
+	<Title
+		title="Hello Everyone!"
+		title2="Welcome!"
+		subtitle="Desarrollando con Astro!"
+	/>
+	<p>
+		El condado de Fuente el Salce es un título nobiliario español concedido
+		por Carlos II el 27 de septiembre de 1689, con el vizcondado previo de
+		la Sierra, a favor de Manuel de Salamanca e Isunza (también apellidado
+		en ocasiones Isunza y Salamanca, al haber heredado el mayorazgo de su
+		familia materna), caballero de la Orden de Calatrava, natural de
+		Valladolid y vecino de Granada. Se convirtió en el primer conde de
+		Fuente el Salce con solo veintitrés años gracias a las influencias de su
+		padre, José de Salamanca y Forcallo, natural de Burgos, caballero de la
+		Orden de Santiago, oidor de las Reales Chancillerías de Valladolid y
+		Granada, miembro del Consejo de Castilla.1​2​ La denominación tanto del
+		condado como del vizcondado previo concedidos a la familia Salamanca
+		hacían referencia a Fuente el Salce, un pago en la llamada Sierra de
+		Ubierna que se cita en antiguos documentos como límite entre las
+		localidades burgalesas de Villaverde Peñahorada y Ubierna.3​ La
+		presencia de miembros de la familia Salamanca en Villaverde Peñahorada
+		está documentada desde al menos 1621,4​ y existen escudos en piedra que
+		muestran las armas del linaje en diferentes casas del pueblo.5​ Manuel
+		de Salamanca e Isunza, I conde de Fuente el Salce, murió sin
+		descendencia, pasando el título a su sobrino, Manuel José Rodríguez de
+		Salamanca y Fernández de Córdoba, natural de Granada. Este último
+		trasladó su residencia a Constantina, donde su familia materna, los
+		Fernández de Córdoba, tenían cargos y propiedades.6​ En Constantina se
+		conserva la casa que fue de los sucesivos Condes de Fuente el Salce, con
+		una colorida portada barroca al estilo de las de otras casas palacio que
+		la saga de alarifes Ruiz Florindo construyó en otras localidades
+		cercanas, como Fuentes de Andalucía o Lora del Río.7​
+	</p>
+	<p>
+		En esta casa de Constantina, situada en el nº 10 de la actual plaza de
+		España, vivieron los condes hasta que a mediados del siglo xix
+		trasladaron su residencia habitual a Córdoba y posteriormente a Madrid.
+		Por ello la familia acabó deshaciéndose del inmueble y a finales del
+		siglo xx presentaba un claro estado de abandono y ruina. En 2004 fue
+		objeto de una profunda restauración que solo conservó la fachada y la
+		volumetría de la primera crujía. Con motivo de aquellas obras, se colocó
+		sobre la puerta de entrada un relieve con el escudo que erróneamente
+		pretendía ser el de los primitivos propietarios de la casa. En realidad,
+		las figuras heráldicas que representa dicho escudo (en concreto los
+		cuatro bastones rodeados de una bordura de crucecillas que aparecen en
+		la partición izquierda) se corresponden con las armas de otro linaje
+		noble diferente: el de los Salamanca extremeños, también apellidados en
+		ocasiones Rodríguez de Salamanca, Rodríguez de las Varillas o incluso
+		Rodríguez de las Varillas de Salamanca.8​9​ Los condes de Fuente el
+		Salce, en cambio, pertenecen al linaje Salamanca originario de Burgos
+		(también apellidados indistintamente con el compuesto Rodríguez de
+		Salamanca que más tarde transformaron en Fernández de Salamanca), cuyo
+		escudo es un mantelado en el que figuran dos leones rampantes de gules
+		sobre campo de oro y una flor de lis de plata sobre azur.10​ El 12 de
+		marzo de 2010 era publicado en el Boletín Oficial del Estado el anuncio
+		sobre la solicitud de don Alberto Fernández de Salamanca y Warner para
+		la sucesión en el título de Conde de Fuente el Salce, que estaba vacante
+		tras la muerte de su padre, don Alberto Fernández de Salamanca y
+		Montaner.11​ En el BOE del día 9 de febrero de 2012 se publicó la Orden
+		JUS/212/2012, de 26 de enero, por la que se mandaba expedir, sin
+		perjuicio de tercero de mejor derecho, Real Carta de Sucesión en el
+		título de Conde de Fuente el Salce, a favor de don Alberto Fernández de
+		Salamanca Warner.12​ Condes de Fuente el Salce Manuel de Salamanca e
+		Isunza, I conde de Fuente el Salce, caballero de Calatrava, heredero del
+		mayorazgo de los Isunza y los Escoriaza de Vitoria.13​ Murió sin
+		descendencia, sucediéndole su sobrino. Manuel José Rodríguez de
+		Salamanca y Fernández de Córdoba, II conde de Fuente el Salce,
+		veinticuatro de Córdoba, alcalde por el estado noble de Constantina
+		durante los años 1752, 1753 y 1754.14​ Le sucede su hijo. Fernando María
+		Rodríguez de Salamanca y Quincoces, III conde de Fuente el Salce,
+		veinticuatro de Córdoba, regidor de Lora del Río entre los años 1761 y
+		1775, alcalde por el estado noble de Constantina durante los años
+		1781,1785 y 1795. Murió en 1808,15​ sucediéndole su hijo. Manuel María
+		Rodríguez de Salamanca y Quintanilla, IV conde de Fuente el Salce. Era
+		alguacil mayor de Constantina cuando se produjo la toma y saqueo del
+		pueblo por los franceses en 1808.16​17​ Tras la retirada de las tropas
+		napoleónicas de la zona, en 1813 es nombrado diputado suplente a las
+		Cortes de Cádiz por Sevilla. Murió en 1821,18​ sucediéndole su hijo.
+		Fernando María Rodríguez de Salamanca y Madueño, V conde de Fuente el
+		Salce, caballero de Alcántara, brigadier del ejército. Antes de heredar
+		el título participó en la Guerra del Rosellón, donde fue ascendido a
+		capitán por el propio general Ricardos. En agosto de 1833, mientras se
+		encontraba en Sevilla como subinspector del cuerpo de voluntarios
+		realistas de Andalucía, se ve implicado en las conspiraciones de los
+		partidarios del infante Carlos María Isidro.19​ Después de retirarse del
+		ejército se dedicó a la gestión de sus propiedades, apareciendo en 1849
+		como vocal de la Junta General de Agricultura de Sevilla cuando ésta
+		promovió sin éxito la creación de un Banco Agrícola de ámbito andaluz.
+		Murió en su casa de Constantina en 1850, sucediéndole su hermano.20​
+		José Antonio Rodríguez de Salamanca y Madueño,21​ VI conde de Fuente el
+		Salce.22​ En 1847 resultó elegido diputado provincial de Córdoba por el
+		partido de Montoro. Ostentó el título hasta que falleció sin dejar
+		descendencia el 20 de diciembre de 1876. La línea sucesoria del título
+		siguió en la descendencia de María Manuela Rodríguez de Salamanca y
+		Villarroel, hija de Cayetano Rodríguez de Salamanca y Quintanilla y
+		María Manuela de Villarroel y Lugo, y sobrina de Manuel María Rodríguez
+		de Salamanca y Quintanilla, IV conde. Antonio María Fernández de
+		Salamanca, VII conde de Fuente el Salce,23​ gentilhombre del interior de
+		Alfonso XII y posteriormente de su hermana la infanta Isabel de Borbón.
+		Caballero gran cruz de la Orden de Isabel la Católica.24​ Hijo de María
+		Manuela Rodríguez de Salamanca y Villarroel y Antonio María Fernández y
+		San Román. Para que no se perdiera el apellido de su familia materna,
+		los Rodríguez de Salamanca, de quienes había heredado el título
+		nobiliario que ostentaba, fundió sus dos apellidos (Fernández y
+		Rodríguez de Salamanca) en uno nuevo compuesto (Fernández de Salamanca),
+		añadiendo como segundo apellido el materno de su padre, con lo que pasó
+		a llamarse Antonio María Fernández de Salamanca y San Román. Aunque por
+		su empleo en la corte residió buena parte de su vida en Madrid fue de
+		hecho el último conde de Fuente el Salce vinculado a Constantina, donde
+		siguió siendo propietario de la casa familiar y de numerosas fincas. No
+		en vano, representó a los terratenientes del municipio en la asamblea
+		que la Liga Nacional de Contribuyentes celebró en Madrid en 1882.25​
+		Murió en 1908, sucediéndole su hijo.26​
+	</p>
+</Layout>
+
+<style>
+	p {
+		color: white;
+	}
+</style>

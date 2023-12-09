@@ -2,7 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.astro';
 import BlogPreview from '../components/BlogPreview.astro';
+
+
+
 let allpost = await Astro.glob("./posts/css/*.md");
+
+
 
 allpost = allpost.sort((fecha1, fecha2) => 
 new Date(fecha2.frontmatter.date).valueOf() -

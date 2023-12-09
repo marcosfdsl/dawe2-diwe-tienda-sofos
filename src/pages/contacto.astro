@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Title from '../components/Title.astro';
+import BlogPreview from '../components/BlogPreview.astro';
+let allpost = await Astro.glob("./posts/js/*.md");
+
+allpost = allpost.sort((fecha1, fecha2) => 
+new Date(fecha2.frontmatter.date).valueOf() -
+new Date(fecha1.frontmatter.date).valueOf()
+
+
+);
+---
+
+<Layout title='Hole Everyone!'>
+	<Title title="Hello Everyone!" title2="Welcome!" subtitle="Desarrollando con Astro!" />
+	<h1>contacto</h1>
+</Layout> 

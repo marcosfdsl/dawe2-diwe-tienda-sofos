@@ -1,5 +1,5 @@
 ---
-import Header from '../components/Header.astro';
+import Header from "../components/Header.astro";
 ---
 
 <!doctype html>
@@ -9,20 +9,81 @@ import Header from '../components/Header.astro';
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<script src="./script.js"></script>
 		<meta name="generator" content={Astro.generator} />
 	</head>
 	<body>
 		<Header />
 		<div class="container">
-			<slot />
+			<div class="sliding-background"></div>
+			<div class="text-overlay">
+				<div class="text-content">
+					<slot />
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
 <style>
+	:root {
+		--valor: 0;
+	}
+
+	body,
+	html {
+		margin: 0;
+		padding: 0;
+	}
+
 	.container {
-		padding-left: 300px;
-		padding-right: 300px;
-		margin-left: auto;
-		margin-right: auto;
+		overflow: hidden;
+		height: 95vh;
+		width: 100vw;
+		position: relative;
+	}
+
+	.sliding-background {
+		background: url("imagen1.jpg");
+		background-repeat: repeat-y;
+		background-size: 100% auto;
+		aspect-ratio: 1 / 12;
+		animation: slide 100s linear infinite;
+	}
+
+	@keyframes slide {
+		0% {
+			transform: translate3d(0, 0, 0);
+		}
+
+		100% {
+			transform: translate3d(0, var(--valor), 0);
+		}
+	}
+
+	.text-overlay {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: white;
+		font-size: 20px;
+		z-index: 2;
+	}
+
+	.text-content {
+		overflow-y: auto;
+		max-height: 80vh;
+		max-width: 80vw;
+		padding: 5%;
+	}
+
+	/* Para navegadores WebKit (Chrome, Safari) */
+	.text-content::-webkit-scrollbar {
+		width: 0;
+	}
+
+	/* Para Firefox */
+	.text-content::-moz-scrollbar {
+		width: 0;
 	}
 </style>
