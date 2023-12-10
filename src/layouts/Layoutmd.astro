@@ -16,7 +16,7 @@ const { frontmatter } = Astro.props;
 	<body>
 		<Header />
 		<div class="container">
-			<Title title={frontmatter.title} title2 ="" subtitle={"Post By "+ frontmatter.author}></Title>
+			<Title title={frontmatter.title} subtitle={"Post By "+ frontmatter.author}></Title>
 			<slot />
 		</div>
 	</body>

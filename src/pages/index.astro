@@ -1,7 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Title from "../components/Title.astro";
-import BlogPreview from "../components/BlogPreview.astro";
+import flor from "../fotos/flor.png";
+
 let allpost = await Astro.glob("./posts/**/*.md");
 
 allpost = allpost.sort(
@@ -11,125 +12,1086 @@ allpost = allpost.sort(
 );
 ---
 
-<Layout title="Hole Everyone!">
+<Layout title="Home">
 	<Title
-		title="Hello Everyone!"
-		title2="Welcome!"
-		subtitle="Desarrollando con Astro!"
+		title="Home"
+		subtitle="Dossier de artista"
 	/>
-	<p>
-		El condado de Fuente el Salce es un título nobiliario español concedido
-		por Carlos II el 27 de septiembre de 1689, con el vizcondado previo de
-		la Sierra, a favor de Manuel de Salamanca e Isunza (también apellidado
-		en ocasiones Isunza y Salamanca, al haber heredado el mayorazgo de su
-		familia materna), caballero de la Orden de Calatrava, natural de
-		Valladolid y vecino de Granada. Se convirtió en el primer conde de
-		Fuente el Salce con solo veintitrés años gracias a las influencias de su
-		padre, José de Salamanca y Forcallo, natural de Burgos, caballero de la
-		Orden de Santiago, oidor de las Reales Chancillerías de Valladolid y
-		Granada, miembro del Consejo de Castilla.1​2​ La denominación tanto del
-		condado como del vizcondado previo concedidos a la familia Salamanca
-		hacían referencia a Fuente el Salce, un pago en la llamada Sierra de
-		Ubierna que se cita en antiguos documentos como límite entre las
-		localidades burgalesas de Villaverde Peñahorada y Ubierna.3​ La
-		presencia de miembros de la familia Salamanca en Villaverde Peñahorada
-		está documentada desde al menos 1621,4​ y existen escudos en piedra que
-		muestran las armas del linaje en diferentes casas del pueblo.5​ Manuel
-		de Salamanca e Isunza, I conde de Fuente el Salce, murió sin
-		descendencia, pasando el título a su sobrino, Manuel José Rodríguez de
-		Salamanca y Fernández de Córdoba, natural de Granada. Este último
-		trasladó su residencia a Constantina, donde su familia materna, los
-		Fernández de Córdoba, tenían cargos y propiedades.6​ En Constantina se
-		conserva la casa que fue de los sucesivos Condes de Fuente el Salce, con
-		una colorida portada barroca al estilo de las de otras casas palacio que
-		la saga de alarifes Ruiz Florindo construyó en otras localidades
-		cercanas, como Fuentes de Andalucía o Lora del Río.7​
-	</p>
-	<p>
-		En esta casa de Constantina, situada en el nº 10 de la actual plaza de
-		España, vivieron los condes hasta que a mediados del siglo xix
-		trasladaron su residencia habitual a Córdoba y posteriormente a Madrid.
-		Por ello la familia acabó deshaciéndose del inmueble y a finales del
-		siglo xx presentaba un claro estado de abandono y ruina. En 2004 fue
-		objeto de una profunda restauración que solo conservó la fachada y la
-		volumetría de la primera crujía. Con motivo de aquellas obras, se colocó
-		sobre la puerta de entrada un relieve con el escudo que erróneamente
-		pretendía ser el de los primitivos propietarios de la casa. En realidad,
-		las figuras heráldicas que representa dicho escudo (en concreto los
-		cuatro bastones rodeados de una bordura de crucecillas que aparecen en
-		la partición izquierda) se corresponden con las armas de otro linaje
-		noble diferente: el de los Salamanca extremeños, también apellidados en
-		ocasiones Rodríguez de Salamanca, Rodríguez de las Varillas o incluso
-		Rodríguez de las Varillas de Salamanca.8​9​ Los condes de Fuente el
-		Salce, en cambio, pertenecen al linaje Salamanca originario de Burgos
-		(también apellidados indistintamente con el compuesto Rodríguez de
-		Salamanca que más tarde transformaron en Fernández de Salamanca), cuyo
-		escudo es un mantelado en el que figuran dos leones rampantes de gules
-		sobre campo de oro y una flor de lis de plata sobre azur.10​ El 12 de
-		marzo de 2010 era publicado en el Boletín Oficial del Estado el anuncio
-		sobre la solicitud de don Alberto Fernández de Salamanca y Warner para
-		la sucesión en el título de Conde de Fuente el Salce, que estaba vacante
-		tras la muerte de su padre, don Alberto Fernández de Salamanca y
-		Montaner.11​ En el BOE del día 9 de febrero de 2012 se publicó la Orden
-		JUS/212/2012, de 26 de enero, por la que se mandaba expedir, sin
-		perjuicio de tercero de mejor derecho, Real Carta de Sucesión en el
-		título de Conde de Fuente el Salce, a favor de don Alberto Fernández de
-		Salamanca Warner.12​ Condes de Fuente el Salce Manuel de Salamanca e
-		Isunza, I conde de Fuente el Salce, caballero de Calatrava, heredero del
-		mayorazgo de los Isunza y los Escoriaza de Vitoria.13​ Murió sin
-		descendencia, sucediéndole su sobrino. Manuel José Rodríguez de
-		Salamanca y Fernández de Córdoba, II conde de Fuente el Salce,
-		veinticuatro de Córdoba, alcalde por el estado noble de Constantina
-		durante los años 1752, 1753 y 1754.14​ Le sucede su hijo. Fernando María
-		Rodríguez de Salamanca y Quincoces, III conde de Fuente el Salce,
-		veinticuatro de Córdoba, regidor de Lora del Río entre los años 1761 y
-		1775, alcalde por el estado noble de Constantina durante los años
-		1781,1785 y 1795. Murió en 1808,15​ sucediéndole su hijo. Manuel María
-		Rodríguez de Salamanca y Quintanilla, IV conde de Fuente el Salce. Era
-		alguacil mayor de Constantina cuando se produjo la toma y saqueo del
-		pueblo por los franceses en 1808.16​17​ Tras la retirada de las tropas
-		napoleónicas de la zona, en 1813 es nombrado diputado suplente a las
-		Cortes de Cádiz por Sevilla. Murió en 1821,18​ sucediéndole su hijo.
-		Fernando María Rodríguez de Salamanca y Madueño, V conde de Fuente el
-		Salce, caballero de Alcántara, brigadier del ejército. Antes de heredar
-		el título participó en la Guerra del Rosellón, donde fue ascendido a
-		capitán por el propio general Ricardos. En agosto de 1833, mientras se
-		encontraba en Sevilla como subinspector del cuerpo de voluntarios
-		realistas de Andalucía, se ve implicado en las conspiraciones de los
-		partidarios del infante Carlos María Isidro.19​ Después de retirarse del
-		ejército se dedicó a la gestión de sus propiedades, apareciendo en 1849
-		como vocal de la Junta General de Agricultura de Sevilla cuando ésta
-		promovió sin éxito la creación de un Banco Agrícola de ámbito andaluz.
-		Murió en su casa de Constantina en 1850, sucediéndole su hermano.20​
-		José Antonio Rodríguez de Salamanca y Madueño,21​ VI conde de Fuente el
-		Salce.22​ En 1847 resultó elegido diputado provincial de Córdoba por el
-		partido de Montoro. Ostentó el título hasta que falleció sin dejar
-		descendencia el 20 de diciembre de 1876. La línea sucesoria del título
-		siguió en la descendencia de María Manuela Rodríguez de Salamanca y
-		Villarroel, hija de Cayetano Rodríguez de Salamanca y Quintanilla y
-		María Manuela de Villarroel y Lugo, y sobrina de Manuel María Rodríguez
-		de Salamanca y Quintanilla, IV conde. Antonio María Fernández de
-		Salamanca, VII conde de Fuente el Salce,23​ gentilhombre del interior de
-		Alfonso XII y posteriormente de su hermana la infanta Isabel de Borbón.
-		Caballero gran cruz de la Orden de Isabel la Católica.24​ Hijo de María
-		Manuela Rodríguez de Salamanca y Villarroel y Antonio María Fernández y
-		San Román. Para que no se perdiera el apellido de su familia materna,
-		los Rodríguez de Salamanca, de quienes había heredado el título
-		nobiliario que ostentaba, fundió sus dos apellidos (Fernández y
-		Rodríguez de Salamanca) en uno nuevo compuesto (Fernández de Salamanca),
-		añadiendo como segundo apellido el materno de su padre, con lo que pasó
-		a llamarse Antonio María Fernández de Salamanca y San Román. Aunque por
-		su empleo en la corte residió buena parte de su vida en Madrid fue de
-		hecho el último conde de Fuente el Salce vinculado a Constantina, donde
-		siguió siendo propietario de la casa familiar y de numerosas fincas. No
-		en vano, representó a los terratenientes del municipio en la asamblea
-		que la Liga Nacional de Contribuyentes celebró en Madrid en 1882.25​
-		Murió en 1908, sucediéndole su hijo.26​
-	</p>
+	<div class="flex flex-col items-center justify-center text-center relative">
+		<div class="flex flex-col justify-center pb-4 z-20">
+			<!-- Header -->
+			<header class="flex flex-col items-center pt-8 px-4">
+				<img
+					src={flor.src}
+					alt="Logo Sofos flor negra"
+					class="justify-center w-28 h-28 mb-6 object-cover agrandar3"
+				/>
+				<div class="w-full p-4 lg:px-8 rounded fondoazul">
+					<h1 class="mb-4 text-xl lg:text-2xl font-bold">Sofos</h1>
+					<p class="mb-4 text-sm lg:text-base">
+						Sofos es el nombre de mi faceta artística, un proyecto
+						musical que cuenta con más de <strong
+							>10 años de recorrido</strong
+						> y alrededor de <strong
+							>20.000 oyentes mensuales</strong
+						>. He producido más de 80 canciones y 5 álbumes, de los
+						cuales 3 ya fueron publicados. He actuado en numerosos
+						festivales y conciertos, y participado en grandes
+						eventos como <a
+							class="azul font-bold"
+							href="https://youtu.be/rt9ryt7Wj4g?si=Wl7Wna5sWIPmHbrA"
+							>Reyes de Plaza</a
+						>
+						 (BDP x Urban Roosters) o Urban Park de Madrid Salvaje.
+					</p>
+				</div>
+				<div class="videocontenedor z-50">
+					<iframe
+						id="video"
+						class="video"
+						src="https://www.youtube.com/embed/1GqGpaHtKC4?enablejsapi=1"
+						allowfullscreen
+					>
+					</iframe>
+				</div>
+			</header>
+			<!-- Contenido principal -->
+			<main class="py-4 px-4">
+				<!-- Escuchar -->
+				<section>
+					<h2 class="text-xl lg:text-2xl font-bold mb-8">ESCUCHAR</h2>
+					<div
+						class="flex justify-evenly items-center mb-8 px-4 py-8 lg:px-8 fondoazul rounded"
+					>
+						<a
+							href="https://open.spotify.com/intl-es/artist/5d3mZTupUjrU9lRPeedTpj?si=rsfLD7D2QrqH76uh8DlWjg"
+							class="fa-brands fa-spotify text-4xl azul agrandar3"
+						></a>
+						<a
+							href="https://youtube.com/@sofosbars"
+							class="fa-brands fa-youtube text-4xl azul agrandar3"
+						></a>
+						<a
+							href="https://music.apple.com/es/artist/sofos/1483755970"
+							class="fa-brands fa-itunes-note text-4xl azul agrandar3"
+						></a>
+					</div>
+				</section>
+				<!-- Biografía -->
+				<section>
+					<h2 class="text-xl lg:text-2xl font-bold mb-8">
+						BIOGRAFÍA
+					</h2>
+					<!-- 2009 -->
+					<div class="mb-4 p-4 lg:px-8">
+						<h3 class="text-sm lg:text-base font-bold mb-2">
+							2009 - 2015
+						</h3>
+						<p class="text-sm lg:text-base">
+							Empecé a interesarme por el rap en 2009, escribiendo
+							mis propias canciones cuando tenía apenas 10 años.
+							Ya tocaba algún instrumento, por lo que aprendí a
+							producir instrumentales en FL Studio, las cuales aún
+							se pueden encontrar en <a
+								class="azul font-bold"
+								href="https://soundcloud.com/sofosmusic"
+								>SoundCloud</a
+							> bajo el nombre de Mark.
+						</p><br />
+						<p class="text-sm lg:text-base">
+							En 2013, pude grabar mis primeros temas, incluyendo
+							Ácido, Vocablos y Sangre Fría. Para 2015 ya había
+							grabado al menos 10 canciones, a pesar de no tener
+							un micrófono de calidad y carecer de conocimientos
+							de mezcla. Desgraciadamente, ninguno de estos
+							trabajos se encuentra en la red, aunque aún hay un
+							vídeo publicado en YouTube titulado
+							<a
+								class="azul font-bold"
+								href="https://www.youtube.com/watch?v=6Avoe6kf-3M&ab_channel=Mark%26Jota"
+								>Sofos | Cómo hago mis bases</a
+							> (a pesar de haber conservado el nombre de Mark
+							hasta 2019).
+						</p>
+					</div>
+					<!-- 2016 -->
+					<div class="mb-4 p-4 lg:px-8">
+						<h3 class="text-sm lg:text-base font-bold mb-2">
+							2016 - 2018
+						</h3>
+						<p class="text-sm lg:text-base">
+							Me fui a estudiar a Oregón (Estados Unidos) durante
+							un año en septiembre de 2016. Lo que podría haber
+							sido un retroceso en mi creación musical resultó ser
+							todo lo contrario. Tuve mucho tiempo libre para
+							trabajar en mi primer disco <a
+								class="azul font-bold"
+								href="https://www.youtube.com/watch?v=uvwsaQ5sGkk&list=PLnKYAXIwmuVldqPzyBZnBqng1EgFowmpp&ab_channel=Mark"
+								>Anhelo</a
+							>, compuesto por 11 canciones y un skit, que pude
+							grabar en un estudio de radio donde trabajé. Este
+							disco aún se encuentra en YouTube bajo el nombre de
+							Mark.
+						</p><br />
+						<p class="text-sm lg:text-base">
+							Ya de vuelta en España continué grabando canciones
+							según las iba escribiendo, con letras cada vez más
+							complejas que trataban sobre temas profundos o
+							filosóficos. Es el caso de temas como <a
+								class="azul font-bold"
+								href="https://www.youtube.com/watch?v=Z5-etrzNWv0&ab_channel=Mark"
+								>Conciencia</a
+							>,
+							<a
+								class="azul font-bold"
+								href="https://www.youtube.com/watch?v=ob_kV9oVr_c&ab_channel=Mark"
+								>Solipsismo</a
+							>,
+							<a
+								class="azul font-bold"
+								href="https://www.youtube.com/watch?v=7l_ycTL_KWI&ab_channel=Mark"
+								>Concepción</a
+							>
+							 o <a
+								class="azul font-bold"
+								href="https://www.youtube.com/watch?v=jKsgOpalJzo&ab_channel=Mark"
+								>Sofía</a
+							>. También experimenté con temas agresivos como <a
+								class="azul font-bold"
+								href="https://www.youtube.com/watch?v=_cv0YgRMlAQ&ab_channel=Mark"
+								>Orden</a
+							>
+							 o <a
+								class="azul font-bold"
+								href="https://www.youtube.com/watch?v=mLg95sQFm_w&ab_channel=Mark"
+								>Diálogos</a
+							>, que influyeron en mi acercamiento a un sonido más
+							oscuro en el futuro. Sin embargo, esta agresividad
+							se refiere al sonido y no al contenido de las
+							letras, conservando siempre la misma esencia.
+						</p>
+					</div>
+					<!-- 2019 -->
+					<div class="mb-4 p-4 lg:px-8">
+						<h3 class="text-sm lg:text-base font-bold mb-2">
+							2019 - 2020
+						</h3>
+						<p class="text-sm lg:text-base">
+							Se podría decir que en 2019 establecí mi estilo
+							propio, ahora bajo el nombre de Sofos. Además, por
+							primera vez, decidí grabar en un estudio
+							profesional, al que aún sigo visitando. En BKK
+							Estudios, grabé el tema <a
+								class="azul font-bold"
+								href="https://www.youtube.com/watch?v=930ojD-Yvxw&ab_channel=Sofos"
+								>Andrómeda</a
+							>, que presenté en el Tour Music Festival de 2019.
+							Ese año, también tuve la oportunidad de participar
+							en la conocida serie <a
+								class="azul font-bold"
+								href="https://www.youtube.com/watch?v=Th5zRhVQP0U&ab_channel=RETINA"
+								>Madrid Live Oneshot</a
+							>, todavía usando el alias de Mark.
+						</p><br />
+						<p class="text-sm lg:text-base">
+							En 2020, despegó mi famoso tema <a
+								class="azul font-bold"
+								href="https://open.spotify.com/intl-es/album/6j7RpfebSqddVbV1mi2Anl?si=JGDc18teQHWYfh7dNkkusA"
+								>Bars I</a
+							>, que actualmente cuenta con más de 900.000
+							reproducciones en Spotify. Más tarde salió <a
+								class="azul font-bold"
+								href="https://open.spotify.com/album/2O1Xm2GLWQi3zemUvVteTh?si=x4bYQCVqQGCFA3ZQEomZ1w"
+								>Bars II</a
+							>, un remix en colaboración con Last Good Kid On
+							Earth. Junto con el mismo artista se lanzó <a
+								class="azul font-bold"
+								href="https://open.spotify.com/album/5aABeWBlp2Bar1SN6uRJPf?si=l6p64nFjSBC8R_wc9-JWyg"
+								>Flesh</a
+							>
+							 poco después, esta vez sobre una instrumental de
+							drill. También se publicaron temas como <a
+								class="azul font-bold"
+								href="https://open.spotify.com/album/058M3CmWNyNzy8oVcLlwxi?si=8kKcXpl5Q6aJVamM6Vqngg"
+								>Hábitat</a
+							>
+							 (grabado por Dawiz) y <a
+								class="azul font-bold"
+								href="">Síndrome</a
+							>
+							 (grabado por Hilton), que tiene su propio oneshot
+							en el canal de <a
+								class="azul font-bold"
+								href="https://www.youtube.com/watch?v=nxowckFWYpE&ab_channel=BigWingsMusic"
+								>Big Wings Music</a
+							>.
+						</p>
+					</div>
+					<!-- 2021 -->
+					<div class="mb-4 p-4 lg:px-8">
+						<h3 class="text-sm lg:text-base font-bold mb-2">
+							2021 - 2022
+						</h3>
+						<p class="text-sm lg:text-base">
+							El trabajo que consolidó mi carrera fue mi penúltimo
+							disco, <a
+								class="azul font-bold"
+								href="https://open.spotify.com/intl-es/album/7bGBD8MKF51C5KiUSMfkeK?si=4Bqr5W3wRZWu0yYi9cw1fQ"
+								>BIG FISH</a
+							>, que consta de 12 canciones de diversos estilos
+							dentro del género urbano. Incluye colaboraciones de
+							artistas como Zehache 07, Kaii Tropicc o Last Good
+							Kid On Earth. Lanzado el 11 de enero de 2022,
+							actualmente cuenta con más de 800.000 reproducciones
+							en Spotify y se puede encontrar un recopilatorio del
+							disco en video en <a
+								class="azul font-bold"
+								href="https://youtu.be/1GqGpaHtKC4?feature=shared"
+								>YouTube</a
+							>.
+						</p><br />
+						<p class="text-sm lg:text-base">
+							Además de BIG FISH, empecé a preparar mi próximo
+							disco <a
+								class="azul font-bold"
+								href="https://open.spotify.com/intl-es/album/4ogQPJOoJHF1E3qnMS6uyO?si=8shL3l7cRm6yhcYsvystOA"
+								>AÚN DICEN QUE EL PESCADO ES CARO</a
+							>, del cual hablaremos más adelante, sacando varios
+							trabajos que formarían parte de él, como <a
+								class="azul font-bold"
+								href="https://youtu.be/GNSyBZzmjNo?si=KJRoP4vsU_WF7EKG"
+								>Algoritmo</a
+							>,
+							<a
+								class="azul font-bold"
+								href="https://youtu.be/-UbAbsH06VQ?si=uWA6Dl6LaKTcWwSc"
+								>Kiddo</a
+							> y <a
+								class="azul font-bold"
+								href="https://youtu.be/z2s7rEYKB-s?si=fJWD1rVL0utVWpBI"
+								>Lo Entiendo</a
+							>. También publiqué singles independientes como <a
+								class="azul font-bold"
+								href="https://youtu.be/hyhFmpc874s?si=pxZvSuDoZxA768o-"
+								>No Es Serio</a
+							>
+							 y <a
+								class="azul font-bold"
+								href="https://youtu.be/UDUoyWXcA_c?si=VTaenH4J_PoHK-9D"
+								>Baklavas</a
+							>.
+						</p>
+					</div>
+					<!-- 2023 -->
+					<div class="mb-8 p-4 lg:px-8">
+						<h3 class="text-sm lg:text-base font-bold mb-2">
+							2023
+						</h3>
+						<p class="text-sm lg:text-base">
+							A principios de 2023 terminé de construir mi último
+							disco, ADQEPEC (AÚN DICEN QUE EL PESCADO ES CARO),
+							que fue publicado el 20 de abril tras haber lanzado
+							los últimos temas antes de su debut, <a
+								class="azul font-bold"
+								href="https://youtu.be/nQVSbhg_SwQ?si=V8XDjCgMJtfaEmhk"
+								>Reseteo</a
+							> y <a
+								class="azul font-bold"
+								href="https://youtu.be/SnUiFG4BFio?si=OBVPOpa5OEK2-gkc"
+								>Pausa</a
+							>. Por otro lado, el conocido estudio de grabación
+							madrileño BKK Estudios decidió comenzar una serie de
+							colaboraciones con diferentes artistas, siendo el
+							primero yo mismo. De esta colaboración surgió <a
+								class="azul font-bold"
+								href="https://youtu.be/sasg0KvITpA?si=K7KWWjz0IrH-NPfa"
+								>Barotrauma</a
+							>, grabado, producido, mezclado y masterizado en el
+							mismo estudio.
+						</p><br />
+						<p class="text-sm lg:text-base">
+							Actualmente, estoy trabajando en nuevos singles y
+							colaboraciones con otros artistas de la escena.
+							Además, ya se ha anunciado la fecha de mi próximo
+							álbum <b>PAROLES PERTINENTES</b> (4/4/24), que
+							incluye temas como <a
+								class="azul font-bold"
+								href="https://youtu.be/evMr-qPoiXc?si=RvZTEgdaxLQXTK7K"
+								>Ancelotti</a
+							>,
+							<a
+								class="azul font-bold"
+								href="https://youtu.be/IeWh_T3a4WI?si=o-6Nu5byz0WVKomj"
+								>Target</a
+							> y <a
+								class="azul font-bold"
+								href="https://youtu.be/bA-xW1BSfiI?si=OZEsNttwI7MPhXmo"
+								>Post Mortem</a
+							>.
+						</p>
+					</div>
+				</section>
+				<!-- Alias -->
+				<section>
+					<h2 class="text-xl lg:text-2xl font-bold mb-8">ALIAS</h2>
+					<div class="mb-8 p-4 lg:px-8 fondoazul rounded">
+						<p class="text-sm lg:text-base">
+							Comencé a utilizar el alias de Sofos a partir de
+							2019, que nació a raíz de mi interés por la
+							filosofía griega. Aunque fue una transición
+							progresiva, se podría decir que mi última canción
+							como Mark fue
+							<a
+								class="azul font-bold"
+								href="https://youtu.be/8-A7WfpH0YE?si=zBy5nB6UZWH0E9SQ"
+								>Serotón</a
+							>. Yo digo: “Sofos es la suma de paradigmas y
+							vivencias atemporales que el yo de un momento
+							determinado nunca será capaz de reunir”.
+						</p><br />
+						<p class="text-sm lg:text-base">
+							Una curiosidad es que es un palíndromo, es decir, se
+							lee igual tanto de izquierda a derecha como de
+							derecha a izquierda.
+						</p>
+					</div>
+				</section>
+
+				<!-- Discografía -->
+				<section>
+					<h2 class="text-xl lg:text-2xl font-bold mb-8">
+						DISCOGRAFÍA
+					</h2>
+					<!-- Solitario -->
+					<div class="mb-4 pt-4 pb-8 lg:px-4 lg:text-base">
+						<h3 class="letra lg:text-lg font-bold mb-4">
+							En solitario
+						</h3>
+
+						<div
+							id="main"
+							class="letra2 grid grid-cols-4 justify-evenly"
+						>
+							<div
+								class="col-span-2 flex flex-col justify-center h-8 fondoazul font-bold"
+							>
+								2016 - 2018
+							</div>
+							<div
+								class="flex flex-col justify-center h-8 fondoazul font-bold"
+							>
+								2019 - 2020
+							</div>
+							<div
+								class="flex flex-col justify-center h-8 fondoazul font-bold"
+							>
+								2021 - 2023
+							</div>
+
+							<div class="h-8"></div>
+							<div class="h-8"></div>
+							<div class="h-8"></div>
+							<div class="h-8"></div>
+
+							<div
+								class="flex flex-col justify-center h-8 font-bold"
+							>
+								Álbumes
+							</div>
+							<div class="flex flex-col justify-center h-8">
+								<a
+									class="azul font-bold"
+									href="https://youtu.be/VD598xOfiE4?si=WFsVHB2JI8x_fCAv"
+									>Bio</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8 font-bold"
+							>
+								Singles
+							</div>
+							<div
+								class="flex flex-col justify-center h-8 font-bold"
+							>
+								Álbumes
+							</div>
+
+							<div class="flex flex-col justify-center h-8">
+								<a
+									class="azul font-bold"
+									href="https://www.youtube.com/watch?v=uvwsaQ5sGkk&list=PLnKYAXIwmuVldqPzyBZnBqng1EgFowmpp"
+									>ANHELO</a
+								>
+							</div>
+							<div class="flex flex-col justify-center h-8">
+								<a
+									class="azul font-bold"
+									href="https://youtu.be/QR7RHaeeH08?si=T40bgCJF1TOZLraU"
+									>Diss Track</a
+								>
+							</div>
+							<div class="flex flex-col justify-center h-8">
+								<a
+									class="azul font-bold"
+									href="https://youtu.be/8-A7WfpH0YE?si=7HbAfaR4SEnwq0Al"
+									>Serotón</a
+								>
+							</div>
+							<div class="flex flex-col justify-center h-8">
+								<a
+									class="azul font-bold"
+									href="https://open.spotify.com/intl-es/album/7bGBD8MKF51C5KiUSMfkeK?si=-avElfYgQhKMeetbLMMQgQ"
+									>BIG FISH</a
+								>
+							</div>
+
+							<div
+								class="flex flex-col justify-center h-8 font-bold"
+							>
+								Singles
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://youtu.be/1Dp7GAxqxpA?si=PSJwg25rVhsLaJ77"
+									>Huella</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://open.spotify.com/intl-es/album/0Zs27gv8EzbCGhldfsU0Q2?si=M8F4LDp8T2mpvvgRpOW9Iw"
+									>Andrómeda</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://open.spotify.com/intl-es/album/4ogQPJOoJHF1E3qnMS6uyO?si=Qha1pwFTT5K_JeSs-RxsjA"
+									>ADQEPEC</a
+								>
+							</div>
+
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://youtu.be/0ueeaF07TvA?si=VdYEdzX5fHZE9YlN"
+									>Chica de Artes</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://youtu.be/BOeKoQ8kk0k?si=pB0of66Bmhr3hWDB"
+									>Martirio</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://open.spotify.com/album/058M3CmWNyNzy8oVcLlwxi?si=mI-QnMXiR1mhHOXuqXpjfQ"
+									>Hábitat</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								Singles
+							</div>
+
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://youtu.be/1MH11HRcPeQ?si=7unjJTziOT3Hu2KI"
+									>Demacre</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://youtu.be/7l_ycTL_KWI?si=eby4DOUZHpEjzd-l"
+									>Concepción</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://open.spotify.com/intl-es/album/34rBMfNMO2zWKZ56qAJqFl?si=CN2Gt7XnTDqCUbEdV0XaZg"
+									>Síndrome</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://open.spotify.com/album/1EyX95TWMq6qXDcRVXCV6d?si=r5exusY-QxWLXaobYNCNIQ"
+									>Sin Filtro</a
+								>
+							</div>
+
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://youtu.be/ob_kV9oVr_c?si=F4Gr9fLwGMOkzgG7"
+									>Solipsismo</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://youtu.be/UT2NWemfUwA?si=NcpDaVLOwNcAKz8N"
+									>Criminal</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://open.spotify.com/intl-es/album/6j7RpfebSqddVbV1mi2Anl?si=M17DM8vLQ36xomDaV-0TYQ"
+									>Bars I</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://youtu.be/hyhFmpc874s?si=ECNnfnPl1wXrNZMG"
+									>No Es Serio</a
+								>
+							</div>
+
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://youtu.be/Bkj8LSTDb4U?si=Zgdv4hgeHEBEmiZ8"
+									>Pedazos</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://youtu.be/lVPH9ge276k?si=IquQZtae9EqxP3--"
+									>Evadido</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://youtu.be/UDUoyWXcA_c?si=IbQ-v8VOj7YpmQ5L"
+									>Baklavas</a
+								>
+							</div>
+
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://youtu.be/gXb1Jk9EkT8?si=hWaRUVJkvvIcvhzK"
+									>Altruismo</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://youtu.be/6-sx_D7FO-I?si=9ALLEQoc4_uxaexj"
+									>Lichtung</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+							</div>
+
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://youtu.be/O85Xvsgg8oM?si=UaJAouskK4yFjWNw"
+									>Virtud</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://youtu.be/oGvGjULkHTM?si=5rJsHlsg3QkzqxD9"
+									>Deep</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+							</div>
+
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://youtu.be/Z5-etrzNWv0?si=upZu-UNZcmWaoqUN"
+									>Conciencia</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://youtu.be/_cv0YgRMlAQ?si=kzdgrqVJ79PFMxpS"
+									>Orden</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+							</div>
+
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://youtu.be/jKsgOpalJzo?si=flT_dI5LLKQQ_467"
+									>Sofía</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://youtu.be/mLg95sQFm_w?si=8LdBHLRt_z8pd-wR"
+									>Diálogos</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+							</div>
+
+							<div class="h-8"></div>
+							<div class="h-8"></div>
+							<div class="h-8"></div>
+							<div class="h-8"></div>
+						</div>
+					</div>
+					<!-- Colaboraciones -->
+					<div
+						class="mb-8 pt-4 pb-8 lg:px-4 lg:text-base"
+					>
+						<h3 class="letra lg:text-lg font-bold mb-4">
+							Colaboraciones
+						</h3>
+
+						<div
+							id="main"
+							class="letra2 grid grid-cols-3 justify-evenly"
+						>
+							<div
+								class="flex flex-col justify-center h-8 fondoazul font-bold"
+							>
+								2020
+							</div>
+							<div
+								class="flex flex-col justify-center h-8 fondoazul font-bold"
+							>
+								2021 - 2022
+							</div>
+							<div
+								class="flex flex-col justify-center h-8 fondoazul font-bold"
+							>
+								2023 - 2024
+							</div>
+
+							<div class="h-8"></div>
+							<div class="h-8"></div>
+							<div class="h-8"></div>
+
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://youtu.be/rVFKubVuj-M?si=osRLbqDrdDBBGtu_"
+									>Moiras</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://www.youtube.com/watch?v=1GqGpaHtKC4&t=372s"
+									>Misterio</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://youtu.be/sasg0KvITpA?si=wrGEJGoSG2tze2Ft"
+									>Barotrauma</a
+								>
+							</div>
+
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								Ene.miez, PG232
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								Zehache 07
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								BKK Estudios
+							</div>
+
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://open.spotify.com/intl-es/album/2O1Xm2GLWQi3zemUvVteTh?si=dixIajg-TierS1VDEngcOQ"
+									>Bars II</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://youtu.be/gPG30ra6KGs?si=Bc7GvMe13Mn_wDvl"
+									>Sour Diesel</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://open.spotify.com/intl-es/track/0rSjby12BcITm8NS3wPOYA?si=f7b7c08383c54520"
+									>Phantom</a
+								>
+							</div>
+
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								Last Good Kid on Earth
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								Fives
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								Spooky Phantom
+							</div>
+
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://open.spotify.com/intl-es/album/5aABeWBlp2Bar1SN6uRJPf?si=OG-rbbx-TBGzs-3DxXzyLg"
+									>Flesh</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://www.youtube.com/watch?v=1GqGpaHtKC4&t=964s"
+									>Feedback</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<p class="text-gray-700 font-bold">London</p>
+							</div>
+
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								Last Good Kid on Earth
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								Kaii Tropicc
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								Guijxsv
+							</div>
+
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://youtu.be/Th5zRhVQP0U?si=5Ag3_tiyVCij0hEz"
+									>MLOS 2.0 #78</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://www.youtube.com/watch?v=1GqGpaHtKC4&t=1305s"
+									>Naider</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+							</div>
+
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								RETINA
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								P?
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+							</div>
+
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://youtu.be/J9YbSL_allU?si=OoZ0n-IJ5XfbZY0q"
+									>Garabato</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								<a
+									class="azul font-bold"
+									href="https://www.youtube.com/watch?v=1GqGpaHtKC4&t=1482s"
+									>Endzone</a
+								>
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+							</div>
+
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								Big Wings
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+								Last Good Kid On Earth
+							</div>
+							<div
+								class="flex flex-col justify-center h-8"
+							>
+							</div>
+
+							<div class="h-8"></div>
+							<div class="h-8"></div>
+							<div class="h-8"></div>
+						</div>
+					</div>
+				</section>
+				<!-- Dossier -->
+				<section>
+					<h2 class="text-xl lg:text-2xl font-bold mb-8">DOSSIER</h2>
+					<div
+						class="flex justify-center items-center mb-8 p-4 lg:px-8 fondoazul rounded"
+					>
+						<a
+							href="https://drive.google.com/uc?export=download&id=1OfjV4hy2u2WAx3VHL1Ry5NXqf-glBe6T"
+							title="Descargar Dossier"
+							class="flex justify-center items-center bg-black rounded-full w-12 h-12 hover:bg-gray-800 agrandar2"
+						>
+							<i
+								class="fa-solid fa-file-arrow-down text-white text-xl"
+							></i>
+						</a>
+					</div>
+				</section>
+			</main>
+		</div>
+	</div>
 </Layout>
 
 <style>
-	p {
-		color: white;
+	/* Color fondo azul info */
+	.fondoazul {
+		background-color: #0d91c93a;
+	}
+
+	/* Azul links */
+	.azul {
+		color: #0778a8;
+		transition: color 0.3s;
+	}
+
+	/* Hover azul links */
+	.azul:hover {
+		color: #055f86;
+	}
+
+	/* Hover agrandar iconos rombos */
+	.agrandar {
+		transition: transform ease 0.5s;
+	}
+
+	.rotar.agrandar:hover {
+		transform: rotate(45deg) scale(1.2);
+	}
+
+	.desrotar.agrandar:hover {
+		transform: rotate(-45deg) scale(1.2);
+	}
+
+	/* Hover agrandar botón descarga CV */
+	.agrandar2 {
+		transition: all ease 0.5s;
+	}
+
+	.agrandar2:hover {
+		transform: scale(1.1);
+	}
+
+	/* Hover agrandar foto CV */
+	.agrandar3 {
+		transition: all ease 0.5s;
+	}
+
+	.agrandar3:hover {
+		transform: scale(1.05);
+	}
+
+	/* Flecha transparencia */
+	.transparencia {
+		color: rgba(255, 255, 255, 0.452);
+	}
+
+	/* Video YouTube */
+	.videocontenedor {
+		position: relative;
+		width: 100%;
+		padding-top: 60%;
+		margin-top: 32px;
+		margin-bottom: 8px;
+	}
+
+	.video {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	/* Responsive PC */
+	@media (min-width: 1024px) {
+		/* Oculta botón menú móvil en PC */
+		.esconder {
+			display: none;
+		}
+
+		/* Hace fondo menú transparente */
+		#menu {
+			background: transparent;
+		}
+
+		/* Video YouTube PC */
+		.videocontenedor {
+			width: 80%;
+			padding-top: 40%;
+		}
+	}
+
+	/* Responsive móvil */
+	@media (max-width: 1024px) {
+		.letra {
+			font-size: 14px;
+		}
+
+		.letra2 {
+			font-size: 11px;
+		}
 	}
 </style>

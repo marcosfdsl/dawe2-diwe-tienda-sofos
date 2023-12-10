@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import flor from "../fotos/flor.png";
 ---
 
 <!doctype html>
@@ -8,13 +9,14 @@ import Header from "../components/Header.astro";
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href={flor.src} />
+		<script src="https://kit.fontawesome.com/bf7e2ba98b.js" crossorigin="anonymous"></script>
 		<script src="./script.js"></script>
 		<meta name="generator" content={Astro.generator} />
 	</head>
 	<body>
 		<Header />
-		<div class="container">
+		<div class="contenedor">
 			<div class="sliding-background"></div>
 			<div class="text-overlay">
 				<div class="text-content">
@@ -35,7 +37,7 @@ import Header from "../components/Header.astro";
 		padding: 0;
 	}
 
-	.container {
+	.contenedor {
 		overflow: hidden;
 		height: 95vh;
 		width: 100vw;
@@ -43,7 +45,7 @@ import Header from "../components/Header.astro";
 	}
 
 	.sliding-background {
-		background: url("imagen1.jpg");
+		background: url("../fotos/fondo.jpg");
 		background-repeat: repeat-y;
 		background-size: 100% auto;
 		aspect-ratio: 1 / 12;

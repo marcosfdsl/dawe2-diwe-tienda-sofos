@@ -1,29 +1,27 @@
 ---
 export interface Props {
     title: string;
-    title2: string;
     subtitle: string;
 }
 
-const { title, title2, subtitle } = Astro.props;
+const { title, subtitle } = Astro.props;
 ---
 
 <div class="title">
-    {title}<br />
-    {title2}
+    {title}
 </div>
 <h4>{subtitle}</h4>
 <hr class="solid" />
 
 <style>
     .title {
-        margin-top: 3rem;
         font-weight: bolder;
         font-size: 2rem;
         padding: 0%;
     }
 
     hr.solid {
-        border-top: 2px solid rgb(233, 180, 15);
+        margin-top: 2%;
+        border-top: 2px solid #0d91c93a;
     }
 </style>
