@@ -15,9 +15,11 @@ import flor from "../fotos/flor.png";
 		<meta name="generator" content={Astro.generator} />
 	</head>
 	<body>
-		<Header />
+
 		<div class="contenedor">
+			<Header />
 			<div class="sliding-background"></div>
+			
 			<div class="text-overlay">
 				<div class="text-content">
 					<slot />
@@ -39,12 +41,13 @@ import flor from "../fotos/flor.png";
 
 	.contenedor {
 		overflow: hidden;
-		height: 95vh;
+		height: 100vh;
 		width: 100vw;
 		position: relative;
 	}
 
 	.sliding-background {
+		background-color: black;
 		background: url("../fotos/fondo.jpg");
 		background-repeat: repeat-y;
 		background-size: 100% auto;
