@@ -67,6 +67,11 @@ import flor from "../fotos/flor.png";
         display: flex;
         justify-content: center;
     }
+    .topnav a,
+    .boton {
+        color: white;
+        transition: color 0.3s;
+    }
     .topnav a:hover,
     .boton:hover {
         color: rgb(223, 223, 223);
@@ -99,9 +104,14 @@ import flor from "../fotos/flor.png";
         .flor {
             display: none;
         }
-        .topnav a:hover {
-            background-color: #123;
+        .topnav a {
+            background-color: black;
+            transition: background-color 0.3s;
         }
+        .topnav a:hover {
+            background-color: #0d91c93a;
+        }
+
         .boton {
             display: none;
         }
