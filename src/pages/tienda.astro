@@ -1,18 +1,119 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Title from '../components/Title.astro';
-import BlogPreview from '../components/BlogPreview.astro';
-let allpost = await Astro.glob("./posts/js/*.md");
-
-allpost = allpost.sort((fecha1, fecha2) => 
-new Date(fecha2.frontmatter.date).valueOf() -
-new Date(fecha1.frontmatter.date).valueOf()
-
-
-);
+import Layout from "../layouts/Layout.astro";
+import Title from "../components/Title.astro";
+import c1a from "../fotos/tienda/c1a.png";
+import c1b from "../fotos/tienda/c1b.png";
+import c2a from "../fotos/tienda/c2a.png";
+import c2b from "../fotos/tienda/c2b.png";
+import c3a from "../fotos/tienda/c3a.png";
+import c3b from "../fotos/tienda/c3b.png";
+import c4a from "../fotos/tienda/c4a.png";
+import c4b from "../fotos/tienda/c4b.png";
 ---
 
-<Layout title='Hole Everyone!'>
-	<Title title="Hello Everyone!" subtitle="Desarrollando con Astro!" />
-	<h1>tienda</h1>
-</Layout> 
+<Layout title="Tienda">
+	<Title title="Tienda" subtitle="Merchandising de Sofos" />
+
+	<div class="contenedorelementos">
+		<button class="elemento">
+			<div class="card">
+				<img src={c1a.src} alt="Camiseta 1a" />
+				<img src={c1b.src} alt="Camiseta 1b" class="img-top" />
+			</div>
+			<div class="textoelemento">
+				<p>EHHPDSR Tee #1</p>
+				<p class="mt-2 text-sm">24,99€</p>
+			</div>
+		</button>
+
+		<button class="elemento">
+			<div class="card">
+				<img src={c2a.src} alt="Camiseta 2a" />
+				<img src={c2b.src} alt="Camiseta 2b" class="img-top" />
+			</div>
+			<div class="textoelemento">
+				<p>EHHPDSR Tee #2</p>
+				<p class="mt-2 text-sm">24,99€</p>
+			</div>
+		</button>
+
+		<button class="elemento">
+			<div class="card">
+				<img src={c3a.src} alt="Camiseta 3a" />
+				<img src={c3b.src} alt="Camiseta 3b" class="img-top" />
+			</div>
+			<div class="textoelemento">
+				<p>EHHPDSR Tee #3</p>
+				<p class="mt-2 text-sm">24,99€</p>
+			</div>
+		</button>
+
+		<button class="elemento">
+			<div class="card">
+				<img src={c4a.src} alt="Camiseta 4a" />
+				<img src={c4b.src} alt="Camiseta 4b" class="img-top" />
+			</div>
+			<div class="textoelemento">
+				<p>ISTMO Tee #1</p>
+				<p class="mt-2 text-sm">24,99€</p>
+			</div>
+		</button>
+	</div>
+</Layout>
+
+<style>
+	.contenedorelementos {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+		margin-top: 3%;
+	}
+
+	@media (min-width: 1024px) {
+		.contenedorelementos {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+	.elemento {
+		color: rgb(206, 206, 206);
+		background-color: rgba(194, 194, 194, 0.253);
+		padding: 8px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		transition:
+			scale 0.5s,
+			color 0.5s,
+			background-color 0.3s;
+	}
+
+	.elemento:hover {
+		color: white;
+		background-color: rgba(194, 194, 194, 0.315);
+		scale: 1.03;
+	}
+
+	.textoelemento {
+		font-size: large;
+		margin-bottom: 10%;
+	}
+
+	.card {
+		position: relative;
+		display: inline-block;
+		margin: 10%;
+	}
+	.card .img-top {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 99;
+		opacity: 0;
+		transition: opacity 0.3s ease-in-out;
+	}
+	.card:hover .img-top {
+		opacity: 1;
+	}
+</style>
