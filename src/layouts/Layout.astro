@@ -58,7 +58,7 @@ import flor from "../fotos/flor.png";
 		background-repeat: repeat-y;
 		background-size: 100% auto;
 		aspect-ratio: 1 / 12;
-		animation: slide 100s linear infinite;
+		animation: slide 40s linear infinite;
 	}
 
 	@keyframes slide {
@@ -96,5 +96,11 @@ import flor from "../fotos/flor.png";
 	/* Para Firefox */
 	.text-content::-moz-scrollbar {
 		width: 0;
+	}
+
+    @media (min-width: 1024px) {
+		.sliding-background {
+			animation: slide 120s linear infinite;
+		}
 	}
 </style>
