@@ -2,14 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import Title from "../components/Title.astro";
 import flor from "../fotos/flor.png";
-
-let allpost = await Astro.glob("./posts/**/*.md");
-
-allpost = allpost.sort(
-	(fecha1, fecha2) =>
-		new Date(fecha2.frontmatter.date).valueOf() -
-		new Date(fecha1.frontmatter.date).valueOf(),
-);
 ---
 
 <Layout title="Home">
