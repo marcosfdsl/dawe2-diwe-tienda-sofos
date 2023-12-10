@@ -64,7 +64,7 @@ import flor from "../fotos/flor.png";
 
 	@keyframes slide {
 		0% {
-			transform: translate3d(0, -3600px, 0);
+			transform: translate3d(0, -900px, 0);
 		}
 
 		100% {
@@ -103,5 +103,15 @@ import flor from "../fotos/flor.png";
 		.sliding-background {
 			animation: slide 120s linear infinite;
 		}
+
+		@keyframes slide {
+			0% {
+			transform: translate3d(0, -3600px, 0);
+		}
+
+		100% {
+			transform: translate3d(0, var(--valor), 0);
+		}
+	}
 	}
 </style>
