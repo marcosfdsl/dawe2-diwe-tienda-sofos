@@ -10,16 +10,18 @@ import flor from "../fotos/flor.png";
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href={flor.src} />
-		<script src="https://kit.fontawesome.com/bf7e2ba98b.js" crossorigin="anonymous"></script>
+		<script
+			src="https://kit.fontawesome.com/bf7e2ba98b.js"
+			crossorigin="anonymous"></script>
 		<script src="./script.js"></script>
 		<meta name="generator" content={Astro.generator} />
 	</head>
 	<body>
-
-		<div class="contenedor">
+		<div class="header">
 			<Header />
+		</div>
+		<div class="contenedor">
 			<div class="sliding-background"></div>
-			
 			<div class="text-overlay">
 				<div class="text-content">
 					<slot />
@@ -39,9 +41,13 @@ import flor from "../fotos/flor.png";
 		padding: 0;
 	}
 
+	.header {
+		z-index: 4;
+	}
+
 	.contenedor {
 		overflow: hidden;
-		height: 100vh;
+		height: 92vh;
 		width: 100vw;
 		position: relative;
 	}
@@ -57,7 +63,7 @@ import flor from "../fotos/flor.png";
 
 	@keyframes slide {
 		0% {
-			transform: translate3d(0, 0, 0);
+			transform: translate3d(0, -3600px, 0);
 		}
 
 		100% {
