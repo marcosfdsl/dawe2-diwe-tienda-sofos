@@ -96,5 +96,5 @@ El principal objetivo del proyecto es servir como un portfolio interactivo que p
 <script type="module">
 	var contadorCarrito = document.getElementById("contadorCarrito");
 	var storedCounter = localStorage.getItem("contadorCarrito");
-	contadorCarrito.textContent = storedCounter || 0;
+	contadorCarrito.textContent = storedCounter || (0).toString();
 </script>
