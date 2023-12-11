@@ -8,10 +8,10 @@ import Title from "../components/Title.astro";
 
 	<form action="" method="" class="contenedor">
 		<label for="your-name">Nombre:</label>
-		<input type="text" placeholder="nombre" required />
+		<input type="text" placeholder="Nombre" required />
 
 		<label for="your-email">Email:</label>
-		<input type="email" placeholder="email" required />
+		<input type="email" placeholder="Email" required />
 
 		<label for="asunto">Asunto:</label>
 		<select class="asunto" required>
@@ -23,7 +23,7 @@ import Title from "../components/Title.astro";
 		</select>
 
 		<label for="mensaje">Mensaje:</label>
-		<textarea placeholder="mensaje" required style="resize: none;"
+		<textarea placeholder="Mensaje" required style="resize: none;"
 		></textarea>
 
 		<a class="enviar" href="/contacto">Enviar</a>
@@ -74,14 +74,13 @@ import Title from "../components/Title.astro";
 	}
 
 	@media (min-width: 1024px) {
-		label,
-		a {
+		label {
 			margin-top: 1%;
 			margin-bottom: 1%;
 		}
 
 		a {
-			font-size: large;
+			margin-top: 2%;
 		}
 	}
 </style>

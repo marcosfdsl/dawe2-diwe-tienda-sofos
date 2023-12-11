@@ -15,6 +15,109 @@ import flor from "../fotos/flor.png";
 			crossorigin="anonymous"></script>
 		<script src="./script.js"></script>
 		<meta name="generator" content={Astro.generator} />
+		<style>
+			:root {
+				--valor1: 0;
+				--valor2: 0;
+			}
+
+			body,
+			html {
+				margin: 0;
+				padding: 0;
+				background-color: black;
+				font-family: "Palatino Linotype", "Book Antiqua", "Palatino",
+					serif;
+			}
+
+			.contenedor {
+				overflow: hidden;
+				height: 92vh;
+				width: 100vw;
+				position: relative;
+			}
+
+			.sliding-background {
+				background-color: black;
+				background: url("../fotos/fondo.jpg");
+				background-repeat: repeat-y;
+				background-size: 100% auto;
+				aspect-ratio: 1 / 12;
+				animation: slide 50s linear infinite;
+			}
+
+			@keyframes slide {
+				0% {
+					transform: translate3d(0, 0, 0);
+				}
+
+				100% {
+					transform: translate3d(0, var(--valor1), 0);
+				}
+			}
+
+			.text-overlay {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				color: white;
+				font-size: 20px;
+				z-index: 2;
+				width: 95%;
+			}
+
+			.text-content {
+				overflow-y: auto;
+				max-height: 80vh;
+				max-width: 95vw;
+				padding: 5%;
+			}
+
+			/* Para navegadores WebKit (Chrome, Safari) */
+			.text-content::-webkit-scrollbar {
+				width: 0;
+			}
+
+			/* Para Firefox */
+			.text-content::-moz-scrollbar {
+				width: 0;
+			}
+
+			@media (min-width: 1024px) {
+				.text-overlay {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					color: white;
+					font-size: 20px;
+					z-index: 2;
+					width: 80%;
+				}
+
+				.text-content {
+					overflow-y: auto;
+					max-height: 80vh;
+					max-width: 80vw;
+					padding: 5%;
+				}
+
+				.sliding-background {
+					animation: slide 120s linear infinite;
+				}
+
+				@keyframes slide {
+					0% {
+						transform: translate3d(0, -2800px, 0);
+					}
+
+					100% {
+						transform: translate3d(0, var(--valor2), 0);
+					}
+				}
+			}
+		</style>
 	</head>
 	<body>
 		<Header />
@@ -28,104 +131,3 @@ import flor from "../fotos/flor.png";
 		</div>
 	</body>
 </html>
-<style>
-	:root {
-		--valor1: 0;
-		--valor2: 0;
-	}
-
-	body,
-	html {
-		margin: 0;
-		padding: 0;
-		background-color: black;
-	}
-
-	.contenedor {
-		overflow: hidden;
-		height: 92vh;
-		width: 100vw;
-		position: relative;
-	}
-
-	.sliding-background {
-		background-color: black;
-		background: url("../fotos/fondo.jpg");
-		background-repeat: repeat-y;
-		background-size: 100% auto;
-		aspect-ratio: 1 / 12;
-		animation: slide 50s linear infinite;
-	}
-
-	@keyframes slide {
-		0% {
-			transform: translate3d(0, 0, 0);
-		}
-
-		100% {
-			transform: translate3d(0, var(--valor1), 0);
-		}
-	}
-
-	.text-overlay {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		color: white;
-		font-size: 20px;
-		z-index: 2;
-		width: 95%;
-	}
-
-	.text-content {
-		overflow-y: auto;
-		max-height: 80vh;
-		max-width: 95vw;
-		padding: 5%;
-	}
-
-	/* Para navegadores WebKit (Chrome, Safari) */
-	.text-content::-webkit-scrollbar {
-		width: 0;
-	}
-
-	/* Para Firefox */
-	.text-content::-moz-scrollbar {
-		width: 0;
-	}
-
-	@media (min-width: 1024px) {
-		.text-overlay {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			color: white;
-			font-size: 20px;
-			z-index: 2;
-			width: 80%;
-		}
-
-		.text-content {
-			overflow-y: auto;
-			max-height: 80vh;
-			max-width: 80vw;
-			padding: 5%;
-		}
-
-		.sliding-background {
-			animation: slide 120s linear infinite;
-		}
-
-		@keyframes slide {
-			0% {
-				transform: translate3d(0, -2800px, 0);
-			}
-
-			100% {
-				transform: translate3d(0, var(--valor2), 0);
-			}
-		}
-	}
-</style>

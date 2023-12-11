@@ -4,5 +4,34 @@ import Title from '../components/Title.astro';
 ---
 
 <Layout title='Carrito'>
-	<Title title="Carrito" subtitle="Carrito de compra" />
-</Layout> 
+    <Title title="Carrito" subtitle="Carrito de compra" />
+    <div id="carrito">
+        <!-- Aquí se mostrarán los datos del carrito -->
+    </div>
+
+    <button id="vaciarBtn">Vaciar</button>
+
+    <script type="module">
+        // Obtener el carrito almacenado en localStorage o un array vacío si no existe
+        var carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+        // Obtener el div del carrito y agregar los elementos del carrito
+        var carritoDiv = document.getElementById('carrito');
+        var vaciarBtn = document.getElementById('vaciarBtn');
+
+        carrito.forEach(function (talla) {
+            var nuevoElemento = document.createElement('div');
+            nuevoElemento.textContent = 'Camiseta ' + talla;
+            carritoDiv.appendChild(nuevoElemento);
+        });
+
+        // Agregar evento al botón de vaciar
+        vaciarBtn.addEventListener('click', function () {
+            // Vaciar el carrito en localStorage
+            localStorage.removeItem('carrito');
+
+            // Limpiar la vista
+            carritoDiv.innerHTML = '';
+        });
+    </script>
+</Layout>
