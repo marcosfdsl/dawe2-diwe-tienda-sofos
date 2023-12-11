@@ -1,9 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Title from '../components/Title.astro';
+import Layout from "../layouts/Layout.astro";
+import Title from "../components/Title.astro";
 ---
 
-<Layout title='Carrito'>
+<Layout title="Carrito">
     <Title title="Carrito" subtitle="Carrito de compra" />
     <div id="carrito">
         <!-- Aquí se mostrarán los datos del carrito -->
@@ -13,25 +13,40 @@ import Title from '../components/Title.astro';
 
     <script type="module">
         // Obtener el carrito almacenado en localStorage o un array vacío si no existe
-        var carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        var carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-        // Obtener el div del carrito y agregar los elementos del carrito
-        var carritoDiv = document.getElementById('carrito');
-        var vaciarBtn = document.getElementById('vaciarBtn');
+        var carritoDiv = document.getElementById("carrito");
+        var vaciarBtn = document.getElementById("vaciarBtn");
+        var contadorCarrito = document.getElementById("contadorCarrito"); // Nuevo
 
-        carrito.forEach(function (talla) {
-            var nuevoElemento = document.createElement('div');
-            nuevoElemento.textContent = 'Camiseta ' + talla;
+        carrito.forEach(function (el, index) {
+            var nuevoElemento = document.createElement("span");
+            nuevoElemento.textContent = el + " ";
             carritoDiv.appendChild(nuevoElemento);
+            if ((index + 1) % 2 === 0) {
+                carritoDiv.appendChild(document.createElement("br"));
+            }
         });
 
+        // Actualizar el contador del carrito (Nuevo)
+        contadorCarrito.textContent = (carrito.length / 2);
+
+        // Guardar el contador en localStorage
+        localStorage.setItem("contadorCarrito", (carrito.length / 2));
+
         // Agregar evento al botón de vaciar
-        vaciarBtn.addEventListener('click', function () {
+        vaciarBtn.addEventListener("click", function () {
             // Vaciar el carrito en localStorage
-            localStorage.removeItem('carrito');
+            localStorage.removeItem("carrito");
 
             // Limpiar la vista
-            carritoDiv.innerHTML = '';
+            carritoDiv.innerHTML = "";
+
+            // Actualizar el contador del carrito (Nuevo)
+            contadorCarrito.textContent = 0;
+
+            // Guardar el contador en localStorage
+            localStorage.setItem("contadorCarrito", 0);
         });
     </script>
 </Layout>

@@ -361,7 +361,9 @@ import flor from "../fotos/flor.png";
 				</section>
 				<!-- Alias -->
 				<section>
-					<h2 class="text-xl lg:text-2xl font-bold mt-8 mb-8">ALIAS</h2>
+					<h2 class="text-xl lg:text-2xl font-bold mt-8 mb-8">
+						ALIAS
+					</h2>
 					<div class="mb-8 p-4 lg:px-8 fondoazul rounded">
 						<p class="text-sm lg:text-base">
 							Comencé a utilizar el alias de Sofos a partir de
@@ -387,9 +389,7 @@ import flor from "../fotos/flor.png";
 
 				<!-- Discografía -->
 				<section>
-					<h2 class="text-xl lg:text-2xl font-bold">
-						DISCOGRAFÍA
-					</h2>
+					<h2 class="text-xl lg:text-2xl font-bold">DISCOGRAFÍA</h2>
 					<!-- Solitario -->
 					<div class="pt-4 lg:px-4 lg:text-base">
 						<h3 class="letra lg:text-lg font-bold mb-4">
@@ -991,3 +991,9 @@ import flor from "../fotos/flor.png";
 		}
 	}
 </style>
+
+<script type="module">
+	var contadorCarrito = document.getElementById("contadorCarrito");
+	var storedCounter = localStorage.getItem("contadorCarrito");
+	contadorCarrito.textContent = storedCounter || 0;
+</script>

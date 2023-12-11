@@ -6,17 +6,30 @@ document.addEventListener("DOMContentLoaded", function () {
     animatedElement.style.setProperty('--valor1', `-${resultado1}px`);
     animatedElement.style.setProperty('--valor2', `-${resultado2}px`);
 
-    const boton = document.querySelector(".elemento");
-    const test = document.querySelector("#test");
     const contenedorelementos = document.querySelector(".contenedorelementos");
+    const elements = {
+        "elementoc1": { test: testc1, id: "testc1" },
+        "elementoc2": { test: testc2, id: "testc2" },
+        "elementoc3": { test: testc3, id: "testc3" },
+        "elementoc4": { test: testc4, id: "testc4" }
+    };
 
     document.addEventListener("click", (event) => {
-        if (event.target.closest(".elemento")) {
-            test.classList.add('moved');
+        if (event.target.closest("#elementoc1") || event.target.closest("#elementoc2") || event.target.closest("#elementoc3") || event.target.closest("#elementoc4")) {
             contenedorelementos.classList.add('disappeared');
-        } else if (event.target !== test && !test.contains(event.target)) {
-            test.classList.remove('moved');
+        } else if (event.target !== testc1 && !testc1.contains(event.target) && event.target !== testc2 && !testc2.contains(event.target) && event.target !== testc3 && !testc3.contains(event.target) && event.target !== testc4 && !testc4.contains(event.target)) {
             contenedorelementos.classList.remove('disappeared');
+        }
+
+        for (const key in elements) {
+            const element = elements[key];
+            const targetElement = event.target.closest(`#${key}`);
+
+            if (targetElement) {
+                element.test.classList.add('moved');
+            } else if (event.target !== element.test && !element.test.contains(event.target)) {
+                element.test.classList.remove('moved');
+            }
         }
     });
 
@@ -37,23 +50,57 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setInterval(nextImage, 5000); //cada 5s
 
-    // carrito
+// Restaurar el contador del carrito al cargar la página
+var contadorCarrito = document.getElementById('contadorCarrito');
+var storedCounter = localStorage.getItem('contadorCarrito');
+var contadorActual = parseInt(storedCounter) || 0;
+contadorCarrito.textContent = contadorActual;
 
-    document.getElementById('formularioCarrito').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar el envío del formulario por defecto
+// Función para agregar un elemento al carrito
+function agregarAlCarrito(talla, producto) {
+    var nuevoElemento = document.createElement('div');
+    nuevoElemento.textContent = 'Añadido al carrito: ' + producto + ' ' + talla;
 
-        // Obtener el valor seleccionado del campo de la talla
-        var tallaSeleccionada = document.getElementById('talla').value;
+    // Obtener el div del carrito y agregar el nuevo elemento al inicio
+    var carritoDiv = document.querySelector('#carrito');
+    carritoDiv.insertBefore(nuevoElemento, carritoDiv.firstChild);
 
-        // Crear un elemento div para mostrar la talla en el carrito
-        var nuevoElemento = document.createElement('div');
+    // Obtener el contador del carrito y guardarlo en localStorage
+    contadorActual++;
+    contadorCarrito.textContent = contadorActual;
+    localStorage.setItem('contadorCarrito', contadorActual);
+}
 
-        nuevoElemento.textContent = 'Añadido al carrito: Camiseta ' + tallaSeleccionada;
+// Evento para formularioCarrito
+document.getElementById('formularioCarrito').addEventListener('submit', function (event) {
+    event.preventDefault();
+    var tallaSeleccionada = document.getElementById('talla').value;
+    var productoSeleccionado = document.getElementById('producto').value;
+    agregarAlCarrito(tallaSeleccionada, productoSeleccionado);
+});
 
-        // Obtener el div del carrito y agregar el nuevo elemento
-        var carritoDiv = document.querySelector('#carrito');
-        carritoDiv.innerHTML = ''; // Limpiar el contenido anterior
-        carritoDiv.appendChild(nuevoElemento);
-    });
+// Evento para formularioCarritoc2
+document.getElementById('formularioCarritoc2').addEventListener('submit', function (event) {
+    event.preventDefault();
+    var tallaSeleccionada = document.getElementById('tallac2').value;
+    var productoSeleccionado = document.getElementById('productoc2').value;
+    agregarAlCarrito(tallaSeleccionada, productoSeleccionado);
+});
+
+// Evento para formularioCarritoc3
+document.getElementById('formularioCarritoc3').addEventListener('submit', function (event) {
+    event.preventDefault();
+    var tallaSeleccionada = document.getElementById('tallac3').value;
+    var productoSeleccionado = document.getElementById('productoc3').value;
+    agregarAlCarrito(tallaSeleccionada, productoSeleccionado);
+});
+
+// Evento para formularioCarritoc4
+document.getElementById('formularioCarritoc4').addEventListener('submit', function (event) {
+    event.preventDefault();
+    var tallaSeleccionada = document.getElementById('tallac4').value;
+    var productoSeleccionado = document.getElementById('productoc4').value;
+    agregarAlCarrito(tallaSeleccionada, productoSeleccionado);
+});
 
 });

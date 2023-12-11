@@ -15,7 +15,7 @@ import c4b from "../fotos/tienda/c4b.png";
 	<Title title="Tienda" subtitle="Merchandising de Sofos" />
 
 	<div class="contenedorelementos">
-		<button class="elemento">
+		<button id="elementoc1" class="elemento">
 			<div class="card">
 				<img src={c1a.src} alt="Camiseta 1a" />
 				<img src={c1b.src} alt="Camiseta 1b" class="img-top" />
@@ -26,7 +26,7 @@ import c4b from "../fotos/tienda/c4b.png";
 			</div>
 		</button>
 
-		<button class="elemento">
+		<button id="elementoc2" class="elemento">
 			<div class="card">
 				<img src={c2a.src} alt="Camiseta 2a" />
 				<img src={c2b.src} alt="Camiseta 2b" class="img-top" />
@@ -37,7 +37,7 @@ import c4b from "../fotos/tienda/c4b.png";
 			</div>
 		</button>
 
-		<button class="elemento">
+		<button id="elementoc3" class="elemento">
 			<div class="card">
 				<img src={c3a.src} alt="Camiseta 3a" />
 				<img src={c3b.src} alt="Camiseta 3b" class="img-top" />
@@ -48,7 +48,7 @@ import c4b from "../fotos/tienda/c4b.png";
 			</div>
 		</button>
 
-		<button class="elemento">
+		<button id="elementoc4" class="elemento">
 			<div class="card">
 				<img src={c4a.src} alt="Camiseta 4a" />
 				<img src={c4b.src} alt="Camiseta 4b" class="img-top" />
@@ -60,7 +60,8 @@ import c4b from "../fotos/tienda/c4b.png";
 		</button>
 	</div>
 
-	<div class="test" id="test">
+	<!-- DESPLIEGUE C1 -->
+	<div class="test" id="testc1">
 		<div class="contenedorelementos2">
 			<div class="elemento2">
 				<div class="elemento3">
@@ -95,14 +96,273 @@ import c4b from "../fotos/tienda/c4b.png";
 								class="asunto"
 								required
 							>
-								<option value="S">S</option>
-								<option value="M">M</option>
-								<option value="L">L</option>
-								<option value="XL">XL</option>
-								<option value="XXL">XXL</option>
+								<option value="talla S">S</option>
+								<option value="talla M">M</option>
+								<option value="talla L">L</option>
+								<option value="talla XL">XL</option>
+								<option value="talla XXL">XXL</option>
+							</select>
+							<select
+								id="producto"
+								name="producto"
+								class="hidden"
+								required
+							>
+								<option value="EHHPDSR Tee #1"></option>
 							</select>
 							<br />
-							<button
+							<button type="submit"
+								class="bg-black rounded-md px-2 py-1 text-sm mt-4 lg:text-md transition ease-in-out hover:text-gray-100 duration-300"
+								>Añadir al carrito</button
+							>
+						</form>
+						<p class="text-xs mt-4">
+							Procesamiento en 2 días hábiles.
+						</p>
+
+						<div id="carrito" class="text-sm mt-4">
+							<!-- Aquí se mostrarán los datos del carrito -->
+						</div>
+					</div>
+				</div>
+				<div class="textoelemento2">
+					<hr class="mt-4 mb-4 lg:mb-16" />
+
+					<p class="text-sm mb-6">
+						Camiseta de manga corta negra "El Hombre Hace Planes
+						Dios Se Ríe" Tee #1
+					</p>
+					<p class="text-sm mb-2">Fotografía por Javier Díaz.</p>
+					<p class="text-sm mb-6">
+						Diseños por Gon Hergueta Studio, NYC.
+					</p>
+					<p class="text-sm mb-2">100% algodón orgánico.</p>
+					<p class="text-sm mb-4 lg:mb-12">180 gms.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- DESPLIEGUE C2 -->
+	<div class="test" id="testc2">
+		<div class="contenedorelementos2">
+			<div class="elemento2">
+				<div class="elemento3">
+					<div class="carousel">
+						<div class="carousel-inner">
+							<div class="carousel-item">
+								<img
+									src={c2a.src}
+									class="imgcarousel"
+									alt="Image 1"
+								/>
+							</div>
+							<div class="carousel-item">
+								<img
+									src={c2b.src}
+									class="imgcarousel"
+									alt="Image 2"
+								/>
+							</div>
+						</div>
+					</div>
+
+					<div class="textoelemento2">
+						<p>EHHPDSR Tee #2</p>
+						<p class="mt-2 text-sm lg:text-md">24,99€</p>
+
+						<form id="formularioCarritoc2">
+							<label class="mr-2" for="tallac2">Talla:</label>
+							<select
+								id="tallac2"
+								name="tallac2"
+								class="asunto"
+								required
+							>
+								<option value="talla S">S</option>
+								<option value="talla M">M</option>
+								<option value="talla L">L</option>
+								<option value="talla XL">XL</option>
+								<option value="talla XXL">XXL</option>
+							</select>
+							<select
+							id="productoc2"
+							name="productoc2"
+							class="hidden"
+							required
+						>
+							<option value="EHHPDSR Tee #2"></option>
+						</select>
+							<br />
+							<button type="submit"
+								class="bg-black rounded-md px-2 py-1 text-sm mt-4 lg:text-md transition ease-in-out hover:text-gray-100 duration-300"
+								>Añadir al carrito</button
+							>
+						</form>
+						<p class="text-xs mt-4">
+							Procesamiento en 2 días hábiles.
+						</p>
+
+						<div id="carrito" class="text-sm mt-4">
+							<!-- Aquí se mostrarán los datos del carrito -->
+						</div>
+					</div>
+				</div>
+				<div class="textoelemento2">
+					<hr class="mt-4 mb-4 lg:mb-16" />
+
+					<p class="text-sm mb-6">
+						Camiseta de manga corta negra "El Hombre Hace Planes
+						Dios Se Ríe" Tee #1
+					</p>
+					<p class="text-sm mb-2">Fotografía por Javier Díaz.</p>
+					<p class="text-sm mb-6">
+						Diseños por Gon Hergueta Studio, NYC.
+					</p>
+					<p class="text-sm mb-2">100% algodón orgánico.</p>
+					<p class="text-sm mb-4 lg:mb-12">180 gms.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- DESPLIEGUE C3 -->
+
+	<div class="test" id="testc3">
+		<div class="contenedorelementos2">
+			<div class="elemento2">
+				<div class="elemento3">
+					<div class="carousel">
+						<div class="carousel-inner">
+							<div class="carousel-item">
+								<img
+									src={c3a.src}
+									class="imgcarousel"
+									alt="Image 1"
+								/>
+							</div>
+							<div class="carousel-item">
+								<img
+									src={c3b.src}
+									class="imgcarousel"
+									alt="Image 2"
+								/>
+							</div>
+						</div>
+					</div>
+
+					<div class="textoelemento2">
+						<p>EHHPDSR Tee #3</p>
+						<p class="mt-2 text-sm lg:text-md">24,99€</p>
+
+						<form id="formularioCarritoc3">
+							<label class="mr-2" for="tallac3">Talla:</label>
+							<select
+								id="tallac3"
+								name="tallac3"
+								class="asunto"
+								required
+							>
+								<option value="talla S">S</option>
+								<option value="talla M">M</option>
+								<option value="talla L">L</option>
+								<option value="talla XL">XL</option>
+								<option value="talla XXL">XXL</option>
+							</select>
+							<select
+							id="productoc3"
+							name="productoc3"
+							class="hidden"
+							required
+						>
+							<option value="EHHPDSR Tee #3"></option>
+						</select>
+							<br />
+							<button type="submit"
+								class="bg-black rounded-md px-2 py-1 text-sm mt-4 lg:text-md transition ease-in-out hover:text-gray-100 duration-300"
+								>Añadir al carrito</button
+							>
+						</form>
+						<p class="text-xs mt-4">
+							Procesamiento en 2 días hábiles.
+						</p>
+
+						<div id="carrito" class="text-sm mt-4">
+							<!-- Aquí se mostrarán los datos del carrito -->
+						</div>
+					</div>
+				</div>
+				<div class="textoelemento2">
+					<hr class="mt-4 mb-4 lg:mb-16" />
+
+					<p class="text-sm mb-6">
+						Camiseta de manga corta negra "El Hombre Hace Planes
+						Dios Se Ríe" Tee #1
+					</p>
+					<p class="text-sm mb-2">Fotografía por Javier Díaz.</p>
+					<p class="text-sm mb-6">
+						Diseños por Gon Hergueta Studio, NYC.
+					</p>
+					<p class="text-sm mb-2">100% algodón orgánico.</p>
+					<p class="text-sm mb-4 lg:mb-12">180 gms.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- DESPLIEGUE C4 -->
+
+	<div class="test" id="testc4">
+		<div class="contenedorelementos2">
+			<div class="elemento2">
+				<div class="elemento3">
+					<div class="carousel">
+						<div class="carousel-inner">
+							<div class="carousel-item">
+								<img
+									src={c4a.src}
+									class="imgcarousel"
+									alt="Image 1"
+								/>
+							</div>
+							<div class="carousel-item">
+								<img
+									src={c4b.src}
+									class="imgcarousel"
+									alt="Image 2"
+								/>
+							</div>
+						</div>
+					</div>
+
+					<div class="textoelemento2">
+						<p>ISTMO Tee #1</p>
+						<p class="mt-2 text-sm lg:text-md">24,99€</p>
+
+						<form id="formularioCarritoc4">
+							<label class="mr-2" for="tallac4">Talla:</label>
+							<select
+								id="tallac4"
+								name="tallac4"
+								class="asunto"
+								required
+							>
+								<option value="S">talla S</option>
+								<option value="M">talla M</option>
+								<option value="L">talla L</option>
+								<option value="XL">talla XL</option>
+								<option value="XXL">talla XXL</option>
+							</select>
+							<select
+							id="productoc4"
+							name="productoc4"
+							class="hidden"
+							required
+						>
+							<option value="ISTMO Tee #1"></option>
+						</select>
+							<br />
+							<button type="submit"
 								class="bg-black rounded-md px-2 py-1 text-sm mt-4 lg:text-md transition ease-in-out hover:text-gray-100 duration-300"
 								>Añadir al carrito</button
 							>
@@ -324,29 +584,116 @@ import c4b from "../fotos/tienda/c4b.png";
 </style>
 
 <script type="module">
+	var carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 	document
 		.getElementById("formularioCarrito")
 		.addEventListener("submit", function (event) {
 			event.preventDefault(); // Evitar el envío del formulario por defecto
 
 			var tallaSeleccionadaElement = document.getElementById("talla");
+			var productoSeleccionadoElement = document.getElementById("producto");
 
 			if (tallaSeleccionadaElement instanceof HTMLSelectElement) {
 				var tallaSeleccionada = tallaSeleccionadaElement.value;
-				// Resto del código...
+				var productoSeleccionado = productoSeleccionadoElement.value;
 			} else {
 				console.error(
 					"El elemento con ID 'talla' no es un HTMLSelectElement",
 				);
 			}
 
-			// Obtener el carrito almacenado en localStorage o un array vacío si no existe
-			var carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
 			// Agregar la talla al carrito
+			carrito.push(productoSeleccionado);
 			carrito.push(tallaSeleccionada);
 
 			// Guardar el carrito actualizado en localStorage
 			localStorage.setItem("carrito", JSON.stringify(carrito));
+
+
 		});
+
+		document
+		.getElementById("formularioCarritoc2")
+		.addEventListener("submit", function (event) {
+			event.preventDefault(); // Evitar el envío del formulario por defecto
+
+			var tallaSeleccionadaElement = document.getElementById("tallac2");
+			var productoSeleccionadoElement = document.getElementById("productoc2");
+
+			if (tallaSeleccionadaElement instanceof HTMLSelectElement) {
+				var tallaSeleccionada = tallaSeleccionadaElement.value;
+				var productoSeleccionado = productoSeleccionadoElement.value;
+			} else {
+				console.error(
+					"El elemento con ID 'talla' no es un HTMLSelectElement",
+				);
+			}
+
+			// Agregar la talla al carrito
+			carrito.push(productoSeleccionado);
+			carrito.push(tallaSeleccionada);
+
+			// Guardar el carrito actualizado en localStorage
+			localStorage.setItem("carrito", JSON.stringify(carrito));
+
+
+		});
+
+		document
+		.getElementById("formularioCarritoc3")
+		.addEventListener("submit", function (event) {
+			event.preventDefault(); // Evitar el envío del formulario por defecto
+
+			var tallaSeleccionadaElement = document.getElementById("tallac3");
+			var productoSeleccionadoElement = document.getElementById("productoc3");
+
+			if (tallaSeleccionadaElement instanceof HTMLSelectElement) {
+				var tallaSeleccionada = tallaSeleccionadaElement.value;
+				var productoSeleccionado = productoSeleccionadoElement.value;
+			} else {
+				console.error(
+					"El elemento con ID 'talla' no es un HTMLSelectElement",
+				);
+			}
+
+			// Agregar la talla al carrito
+			carrito.push(productoSeleccionado);
+			carrito.push(tallaSeleccionada);
+
+			// Guardar el carrito actualizado en localStorage
+			localStorage.setItem("carrito", JSON.stringify(carrito));
+
+
+		});
+
+		document
+		.getElementById("formularioCarritoc4")
+		.addEventListener("submit", function (event) {
+			event.preventDefault(); // Evitar el envío del formulario por defecto
+
+			var tallaSeleccionadaElement = document.getElementById("tallac4");
+			var productoSeleccionadoElement = document.getElementById("productoc4");
+
+			if (tallaSeleccionadaElement instanceof HTMLSelectElement) {
+				var tallaSeleccionada = tallaSeleccionadaElement.value;
+				var productoSeleccionado = productoSeleccionadoElement.value;
+			} else {
+				console.error(
+					"El elemento con ID 'talla' no es un HTMLSelectElement",
+				);
+			}
+
+			// Agregar la talla al carrito
+			carrito.push(productoSeleccionado);
+			carrito.push(tallaSeleccionada);
+
+			// Guardar el carrito actualizado en localStorage
+			localStorage.setItem("carrito", JSON.stringify(carrito));
+
+
+		});
+		
+		var contadorCarrito = document.getElementById("contadorCarrito");
+			var storedCounter = localStorage.getItem("contadorCarrito");
+			contadorCarrito.textContent = storedCounter || 0;
 </script>
