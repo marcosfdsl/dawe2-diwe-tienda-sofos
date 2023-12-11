@@ -23,16 +23,16 @@ import Title from "../components/Title.astro";
             var nuevoElemento = document.createElement("span");
             nuevoElemento.textContent = el + " ";
             carritoDiv.appendChild(nuevoElemento);
-            if ((index + 1) % 2 === 0) {
+            if ((index + 1) % 3 === 0) {
                 carritoDiv.appendChild(document.createElement("br"));
             }
         });
 
         // Actualizar el contador del carrito (Nuevo)
-        contadorCarrito.textContent = (carrito.length / 2);
+        contadorCarrito.textContent = (carrito.length / 3);
 
         // Guardar el contador en localStorage
-        localStorage.setItem("contadorCarrito", (carrito.length / 2));
+        localStorage.setItem("contadorCarrito", (carrito.length / 3));
 
         // Agregar evento al botón de vaciar
         vaciarBtn.addEventListener("click", function () {

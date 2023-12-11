@@ -110,8 +110,17 @@ import c4b from "../fotos/tienda/c4b.png";
 							>
 								<option value="EHHPDSR Tee #1"></option>
 							</select>
+							<select
+								id="precio"
+								name="precio"
+								class="hidden"
+								required
+							>
+								<option value="24,99"></option>
+							</select>
 							<br />
-							<button type="submit"
+							<button
+								type="submit"
 								class="bg-black rounded-md px-2 py-1 text-sm mt-4 lg:text-md transition ease-in-out hover:text-gray-100 duration-300"
 								>Añadir al carrito</button
 							>
@@ -120,7 +129,7 @@ import c4b from "../fotos/tienda/c4b.png";
 							Procesamiento en 2 días hábiles.
 						</p>
 
-						<div id="carrito" class="text-sm mt-4">
+						<div id="carrito" class="text-sm mt-4 carrito">
 							<!-- Aquí se mostrarán los datos del carrito -->
 						</div>
 					</div>
@@ -186,15 +195,24 @@ import c4b from "../fotos/tienda/c4b.png";
 								<option value="talla XXL">XXL</option>
 							</select>
 							<select
-							id="productoc2"
-							name="productoc2"
-							class="hidden"
-							required
-						>
-							<option value="EHHPDSR Tee #2"></option>
-						</select>
+								id="productoc2"
+								name="productoc2"
+								class="hidden"
+								required
+							>
+								<option value="EHHPDSR Tee #2"></option>
+							</select>
+							<select
+								id="precioc2"
+								name="precioc2"
+								class="hidden"
+								required
+							>
+								<option value="24,99"></option>
+							</select>
 							<br />
-							<button type="submit"
+							<button
+								type="submit"
 								class="bg-black rounded-md px-2 py-1 text-sm mt-4 lg:text-md transition ease-in-out hover:text-gray-100 duration-300"
 								>Añadir al carrito</button
 							>
@@ -203,7 +221,7 @@ import c4b from "../fotos/tienda/c4b.png";
 							Procesamiento en 2 días hábiles.
 						</p>
 
-						<div id="carrito" class="text-sm mt-4">
+						<div id="carritoc2" class="text-sm mt-4 carrito">
 							<!-- Aquí se mostrarán los datos del carrito -->
 						</div>
 					</div>
@@ -270,15 +288,24 @@ import c4b from "../fotos/tienda/c4b.png";
 								<option value="talla XXL">XXL</option>
 							</select>
 							<select
-							id="productoc3"
-							name="productoc3"
-							class="hidden"
-							required
-						>
-							<option value="EHHPDSR Tee #3"></option>
-						</select>
+								id="productoc3"
+								name="productoc3"
+								class="hidden"
+								required
+							>
+								<option value="EHHPDSR Tee #3"></option>
+							</select>
+							<select
+								id="precioc3"
+								name="precioc3"
+								class="hidden"
+								required
+							>
+								<option value="24,99"></option>
+							</select>
 							<br />
-							<button type="submit"
+							<button
+								type="submit"
 								class="bg-black rounded-md px-2 py-1 text-sm mt-4 lg:text-md transition ease-in-out hover:text-gray-100 duration-300"
 								>Añadir al carrito</button
 							>
@@ -287,7 +314,7 @@ import c4b from "../fotos/tienda/c4b.png";
 							Procesamiento en 2 días hábiles.
 						</p>
 
-						<div id="carrito" class="text-sm mt-4">
+						<div id="carritoc3" class="text-sm mt-4 carrito">
 							<!-- Aquí se mostrarán los datos del carrito -->
 						</div>
 					</div>
@@ -347,22 +374,31 @@ import c4b from "../fotos/tienda/c4b.png";
 								class="asunto"
 								required
 							>
-								<option value="S">talla S</option>
-								<option value="M">talla M</option>
-								<option value="L">talla L</option>
-								<option value="XL">talla XL</option>
-								<option value="XXL">talla XXL</option>
+								<option value="talla S">S</option>
+								<option value="talla M">M</option>
+								<option value="talla L">L</option>
+								<option value="talla XL">XL</option>
+								<option value="talla XXL">XXL</option>
 							</select>
 							<select
-							id="productoc4"
-							name="productoc4"
-							class="hidden"
-							required
-						>
-							<option value="ISTMO Tee #1"></option>
-						</select>
+								id="productoc4"
+								name="productoc4"
+								class="hidden"
+								required
+							>
+								<option value="ISTMO Tee #1"></option>
+							</select>
+							<select
+								id="precioc4"
+								name="precioc4"
+								class="hidden"
+								required
+							>
+								<option value="24,99"></option>
+							</select>
 							<br />
-							<button type="submit"
+							<button
+								type="submit"
 								class="bg-black rounded-md px-2 py-1 text-sm mt-4 lg:text-md transition ease-in-out hover:text-gray-100 duration-300"
 								>Añadir al carrito</button
 							>
@@ -371,7 +407,7 @@ import c4b from "../fotos/tienda/c4b.png";
 							Procesamiento en 2 días hábiles.
 						</p>
 
-						<div id="carrito" class="text-sm mt-4">
+						<div id="carritoc4" class="text-sm mt-4 carrito">
 							<!-- Aquí se mostrarán los datos del carrito -->
 						</div>
 					</div>
@@ -396,7 +432,7 @@ import c4b from "../fotos/tienda/c4b.png";
 </Layout>
 
 <style>
-	#carrito {
+	.carrito {
 		color: rgba(223, 223, 223, 0.707);
 	}
 
@@ -591,11 +627,14 @@ import c4b from "../fotos/tienda/c4b.png";
 			event.preventDefault(); // Evitar el envío del formulario por defecto
 
 			var tallaSeleccionadaElement = document.getElementById("talla");
-			var productoSeleccionadoElement = document.getElementById("producto");
+			var productoSeleccionadoElement =
+				document.getElementById("producto");
+			var precioElement = document.getElementById("precio");
 
 			if (tallaSeleccionadaElement instanceof HTMLSelectElement) {
 				var tallaSeleccionada = tallaSeleccionadaElement.value;
 				var productoSeleccionado = productoSeleccionadoElement.value;
+				var precio = precioElement.value;
 			} else {
 				console.error(
 					"El elemento con ID 'talla' no es un HTMLSelectElement",
@@ -605,24 +644,26 @@ import c4b from "../fotos/tienda/c4b.png";
 			// Agregar la talla al carrito
 			carrito.push(productoSeleccionado);
 			carrito.push(tallaSeleccionada);
+			carrito.push(precio);
 
 			// Guardar el carrito actualizado en localStorage
 			localStorage.setItem("carrito", JSON.stringify(carrito));
-
-
 		});
 
-		document
+	document
 		.getElementById("formularioCarritoc2")
 		.addEventListener("submit", function (event) {
 			event.preventDefault(); // Evitar el envío del formulario por defecto
 
 			var tallaSeleccionadaElement = document.getElementById("tallac2");
-			var productoSeleccionadoElement = document.getElementById("productoc2");
+			var productoSeleccionadoElement =
+				document.getElementById("productoc2");
+				var precioElement = document.getElementById("precioc2");
 
 			if (tallaSeleccionadaElement instanceof HTMLSelectElement) {
 				var tallaSeleccionada = tallaSeleccionadaElement.value;
 				var productoSeleccionado = productoSeleccionadoElement.value;
+				var precio = precioElement.value;
 			} else {
 				console.error(
 					"El elemento con ID 'talla' no es un HTMLSelectElement",
@@ -630,26 +671,28 @@ import c4b from "../fotos/tienda/c4b.png";
 			}
 
 			// Agregar la talla al carrito
+			carrito.push(precio + '€ |');
 			carrito.push(productoSeleccionado);
 			carrito.push(tallaSeleccionada);
-
+			
 			// Guardar el carrito actualizado en localStorage
 			localStorage.setItem("carrito", JSON.stringify(carrito));
-
-
 		});
 
-		document
+	document
 		.getElementById("formularioCarritoc3")
 		.addEventListener("submit", function (event) {
 			event.preventDefault(); // Evitar el envío del formulario por defecto
 
 			var tallaSeleccionadaElement = document.getElementById("tallac3");
-			var productoSeleccionadoElement = document.getElementById("productoc3");
+			var productoSeleccionadoElement =
+				document.getElementById("productoc3");
+				var precioElement = document.getElementById("precioc3");
 
 			if (tallaSeleccionadaElement instanceof HTMLSelectElement) {
 				var tallaSeleccionada = tallaSeleccionadaElement.value;
 				var productoSeleccionado = productoSeleccionadoElement.value;
+				var precio = precioElement.value;
 			} else {
 				console.error(
 					"El elemento con ID 'talla' no es un HTMLSelectElement",
@@ -657,26 +700,28 @@ import c4b from "../fotos/tienda/c4b.png";
 			}
 
 			// Agregar la talla al carrito
+			carrito.push(precio + '€ |');
 			carrito.push(productoSeleccionado);
 			carrito.push(tallaSeleccionada);
 
 			// Guardar el carrito actualizado en localStorage
 			localStorage.setItem("carrito", JSON.stringify(carrito));
-
-
 		});
 
-		document
+	document
 		.getElementById("formularioCarritoc4")
 		.addEventListener("submit", function (event) {
 			event.preventDefault(); // Evitar el envío del formulario por defecto
 
 			var tallaSeleccionadaElement = document.getElementById("tallac4");
-			var productoSeleccionadoElement = document.getElementById("productoc4");
+			var productoSeleccionadoElement =
+				document.getElementById("productoc4");
+				var precioElement = document.getElementById("precioc4");
 
 			if (tallaSeleccionadaElement instanceof HTMLSelectElement) {
 				var tallaSeleccionada = tallaSeleccionadaElement.value;
 				var productoSeleccionado = productoSeleccionadoElement.value;
+				var precio = precioElement.value;
 			} else {
 				console.error(
 					"El elemento con ID 'talla' no es un HTMLSelectElement",
@@ -684,16 +729,15 @@ import c4b from "../fotos/tienda/c4b.png";
 			}
 
 			// Agregar la talla al carrito
+			carrito.push(precio + '€ |');
 			carrito.push(productoSeleccionado);
 			carrito.push(tallaSeleccionada);
 
 			// Guardar el carrito actualizado en localStorage
 			localStorage.setItem("carrito", JSON.stringify(carrito));
-
-
 		});
-		
-		var contadorCarrito = document.getElementById("contadorCarrito");
-			var storedCounter = localStorage.getItem("contadorCarrito");
-			contadorCarrito.textContent = storedCounter || 0;
+
+	var contadorCarrito = document.getElementById("contadorCarrito");
+	var storedCounter = localStorage.getItem("contadorCarrito");
+	contadorCarrito.textContent = storedCounter || 0;
 </script>
