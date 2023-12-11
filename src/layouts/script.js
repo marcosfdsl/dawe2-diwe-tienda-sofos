@@ -1,42 +1,34 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let elemento = document.querySelector('.sliding-background');
-    var animatedElement = document.querySelector('.sliding-background');
-    let resultado1 = elemento.clientHeight - window.innerHeight + 150;
-    let resultado2 = elemento.clientHeight - window.innerHeight - 1900;
-    animatedElement.style.setProperty('--valor1', `-${resultado1}px`);
-    animatedElement.style.setProperty('--valor2', `-${resultado2}px`);
-
     const contenedorelementos = document.querySelector(".contenedorelementos");
     const elements = {
-        "elementoc1": { id: "elementoc1" },
-        "elementoc2": { id: "elementoc2" },
-        "elementoc3": { id: "elementoc3" },
-        "elementoc4": { id: "elementoc4" }
+        "elementoc1": { test: testc1, id: "testc1" },
+        "elementoc2": { test: testc2, id: "testc2" },
+        "elementoc3": { test: testc3, id: "testc3" },
+        "elementoc4": { test: testc4, id: "testc4" }
     };
-    
+
     document.addEventListener("click", (event) => {
-        const clickedElementId = event.target.closest('[id]').id;
-    
-        if (elements[clickedElementId]) {
+        if (event.target.closest("#elementoc1") || event.target.closest("#elementoc2") || event.target.closest("#elementoc3") || event.target.closest("#elementoc4")) {
             contenedorelementos.classList.add('disappeared');
-        } else {
+        } else if (event.target !== testc1 && !testc1.contains(event.target) && event.target !== testc2 && !testc2.contains(event.target) && event.target !== testc3 && !testc3.contains(event.target) && event.target !== testc4 && !testc4.contains(event.target)) {
             contenedorelementos.classList.remove('disappeared');
             document.getElementById("carrito").innerHTML = "";
             document.getElementById("carritoc2").innerHTML = "";
             document.getElementById("carritoc3").innerHTML = "";
             document.getElementById("carritoc4").innerHTML = "";
         }
-    
+
         for (const key in elements) {
             const element = elements[key];
             const targetElement = event.target.closest(`#${key}`);
-    
+
             if (targetElement) {
-                // Hacer algo con element.id
+                element.test.classList.add('moved');
+            } else if (event.target !== element.test && !element.test.contains(event.target)) {
+                element.test.classList.remove('moved');
             }
         }
     });
-    
 
     // carousel
 
