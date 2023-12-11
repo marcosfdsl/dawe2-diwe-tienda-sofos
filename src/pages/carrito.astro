@@ -54,7 +54,9 @@ import Title from "../components/Title.astro";
             contadorCarrito.textContent = 0;
 
             // Guardar el contador en localStorage
-            localStorage.setItem("contadorCarrito", 0);
+            localStorage.setItem("contadorCarrito", (0).toString());
+
+
         });
     </script>
 </Layout>
