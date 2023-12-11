@@ -8,34 +8,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const contenedorelementos = document.querySelector(".contenedorelementos");
     const elements = {
-        "elementoc1": { test: testc1, id: "testc1" },
-        "elementoc2": { test: testc2, id: "testc2" },
-        "elementoc3": { test: testc3, id: "testc3" },
-        "elementoc4": { test: testc4, id: "testc4" }
+        "elementoc1": { id: "elementoc1" },
+        "elementoc2": { id: "elementoc2" },
+        "elementoc3": { id: "elementoc3" },
+        "elementoc4": { id: "elementoc4" }
     };
-
+    
     document.addEventListener("click", (event) => {
-        if (event.target.closest("#elementoc1") || event.target.closest("#elementoc2") || event.target.closest("#elementoc3") || event.target.closest("#elementoc4")) {
+        const clickedElementId = event.target.closest('[id]').id;
+    
+        if (elements[clickedElementId]) {
             contenedorelementos.classList.add('disappeared');
-        } else if (event.target !== testc1 && !testc1.contains(event.target) && event.target !== testc2 && !testc2.contains(event.target) && event.target !== testc3 && !testc3.contains(event.target) && event.target !== testc4 && !testc4.contains(event.target)) {
+        } else {
             contenedorelementos.classList.remove('disappeared');
             document.getElementById("carrito").innerHTML = "";
             document.getElementById("carritoc2").innerHTML = "";
             document.getElementById("carritoc3").innerHTML = "";
             document.getElementById("carritoc4").innerHTML = "";
         }
-
+    
         for (const key in elements) {
             const element = elements[key];
             const targetElement = event.target.closest(`#${key}`);
-
+    
             if (targetElement) {
-                element.test.classList.add('moved');
-            } else if (event.target !== element.test && !element.test.contains(event.target)) {
-                element.test.classList.remove('moved');
+                // Hacer algo con element.id
             }
         }
     });
+    
 
     // carousel
 
