@@ -642,9 +642,9 @@ import c4b from "../fotos/tienda/c4b.png";
 			}
 
 			// Agregar la talla al carrito
+			carrito.push(precio + "€ |");
 			carrito.push(productoSeleccionado);
 			carrito.push(tallaSeleccionada);
-			carrito.push(precio);
 
 			// Guardar el carrito actualizado en localStorage
 			localStorage.setItem("carrito", JSON.stringify(carrito));
@@ -658,7 +658,7 @@ import c4b from "../fotos/tienda/c4b.png";
 			var tallaSeleccionadaElement = document.getElementById("tallac2");
 			var productoSeleccionadoElement =
 				document.getElementById("productoc2");
-				var precioElement = document.getElementById("precioc2");
+			var precioElement = document.getElementById("precioc2");
 
 			if (tallaSeleccionadaElement instanceof HTMLSelectElement) {
 				var tallaSeleccionada = tallaSeleccionadaElement.value;
@@ -671,10 +671,10 @@ import c4b from "../fotos/tienda/c4b.png";
 			}
 
 			// Agregar la talla al carrito
-			carrito.push(precio + '€ |');
+			carrito.push(precio + "€ |");
 			carrito.push(productoSeleccionado);
 			carrito.push(tallaSeleccionada);
-			
+
 			// Guardar el carrito actualizado en localStorage
 			localStorage.setItem("carrito", JSON.stringify(carrito));
 		});
@@ -687,7 +687,7 @@ import c4b from "../fotos/tienda/c4b.png";
 			var tallaSeleccionadaElement = document.getElementById("tallac3");
 			var productoSeleccionadoElement =
 				document.getElementById("productoc3");
-				var precioElement = document.getElementById("precioc3");
+			var precioElement = document.getElementById("precioc3");
 
 			if (tallaSeleccionadaElement instanceof HTMLSelectElement) {
 				var tallaSeleccionada = tallaSeleccionadaElement.value;
@@ -700,7 +700,7 @@ import c4b from "../fotos/tienda/c4b.png";
 			}
 
 			// Agregar la talla al carrito
-			carrito.push(precio + '€ |');
+			carrito.push(precio + "€ |");
 			carrito.push(productoSeleccionado);
 			carrito.push(tallaSeleccionada);
 
@@ -716,7 +716,7 @@ import c4b from "../fotos/tienda/c4b.png";
 			var tallaSeleccionadaElement = document.getElementById("tallac4");
 			var productoSeleccionadoElement =
 				document.getElementById("productoc4");
-				var precioElement = document.getElementById("precioc4");
+			var precioElement = document.getElementById("precioc4");
 
 			if (tallaSeleccionadaElement instanceof HTMLSelectElement) {
 				var tallaSeleccionada = tallaSeleccionadaElement.value;
@@ -729,7 +729,7 @@ import c4b from "../fotos/tienda/c4b.png";
 			}
 
 			// Agregar la talla al carrito
-			carrito.push(precio + '€ |');
+			carrito.push(precio + "€ |");
 			carrito.push(productoSeleccionado);
 			carrito.push(tallaSeleccionada);
 

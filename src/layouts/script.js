@@ -77,9 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
         nuevoElementoc3.textContent = 'Añadido al carrito: ' + producto + ' ' + talla;
         nuevoElementoc4.textContent = 'Añadido al carrito: ' + producto + ' ' + talla;
 
-
-
-
         // Obtener el div del carrito y agregar el nuevo elemento al inicio
         var carritoDiv = document.querySelector('#carrito');
         carritoDiv.insertBefore(nuevoElemento, carritoDiv.firstChild);

@@ -5,12 +5,20 @@ import Title from "../components/Title.astro";
 
 <Layout title="Carrito">
     <Title title="Carrito" subtitle="Carrito de compra" />
-    <div id="carrito">
+    <div class="contenedor" id="carrito">
         <!-- Aquí se mostrarán los datos del carrito -->
     </div>
 
-    <button id="vaciarBtn">Vaciar</button>
+<hr class="mt-6 mb-4">
 
+    <a href="/carrito" class="pedido">Realizar Pedido</a>
+    <br>
+    <button class="vaciar" id="vaciarBtn">Vaciar</button>
+
+    <hr class="mt-6 mb-6">
+    <div id="total" class="text-sm mt-2 mb-2">
+        Faltaría un contador cuando un producto es añadido varias veces, fotografías, precio total y trámite de pedido.
+    </div>
     <script type="module">
         // Obtener el carrito almacenado en localStorage o un array vacío si no existe
         var carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -50,3 +58,26 @@ import Title from "../components/Title.astro";
         });
     </script>
 </Layout>
+
+<style>
+    .contenedor {
+        margin-top: 2%;
+    }
+
+    .pedido {
+        color: rgba(216, 216, 216, 0.829);
+		transition: color 0.3s;
+		font-size: large;
+	}
+
+    .vaciar {
+        color: rgba(216, 216, 216, 0.651);
+		transition: color 0.3s;
+		font-size: large;
+		margin-top: 1%;
+	}
+	.vaciar:hover, .pedido:hover {
+		color: #d3d3d3;
+	}
+
+</style>
