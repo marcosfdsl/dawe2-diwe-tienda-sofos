@@ -1,18 +1,87 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Title from '../components/Title.astro';
-import BlogPreview from '../components/BlogPreview.astro';
-let allpost = await Astro.glob("./posts/js/*.md");
-
-allpost = allpost.sort((fecha1, fecha2) => 
-new Date(fecha2.frontmatter.date).valueOf() -
-new Date(fecha1.frontmatter.date).valueOf()
-
-
-);
+import Layout from "../layouts/Layout.astro";
+import Title from "../components/Title.astro";
 ---
 
-<Layout title='Hole Everyone!'>
-	<Title title="Hello Everyone!" subtitle="Desarrollando con Astro!" />
-	<h1>contacto</h1>
-</Layout> 
+<Layout title="Contacto">
+	<Title title="Contacto" subtitle="Deja tu mensaje" />
+
+	<form action="" method="" class="contenedor">
+		<label for="your-name">Nombre:</label>
+		<input type="text" placeholder="nombre" required />
+
+		<label for="your-email">Email:</label>
+		<input type="email" placeholder="email" required />
+
+		<label for="asunto">Asunto:</label>
+		<select class="asunto" required>
+			<option value="booking">Booking</option>
+			<option value="prensa">Prensa</option>
+			<option value="booking">Colaboración</option>
+			<option value="patrocinios">Patrocinios</option>
+			<option value="otros">Otros</option>
+		</select>
+
+		<label for="mensaje">Mensaje:</label>
+		<textarea placeholder="mensaje" required style="resize: none;"
+		></textarea>
+
+		<a class="enviar" href="/contacto">Enviar</a>
+	</form>
+</Layout>
+
+<style>
+	.contenedor {
+		color: rgba(255, 255, 255, 0.712);
+		margin-top: 1%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	a {
+		transition: color 0.3s;
+		font-size: large;
+		margin-top: 4%;
+	}
+	a:hover {
+		color: #ececec;
+	}
+
+	label {
+		margin-top: 2%;
+		margin-bottom: 2%;
+		font-size: medium;
+	}
+
+	.asunto,
+	textarea,
+	input {
+		color: black;
+		font-size: small;
+	}
+
+	textarea,
+	input {
+		padding-left: 0.3%;
+		padding-right: 0.3%;
+		height: 10em;
+	}
+
+	select,
+	input {
+		height: 2.3em;
+	}
+
+	@media (min-width: 1024px) {
+		label,
+		a {
+			margin-top: 1%;
+			margin-bottom: 1%;
+		}
+
+		a {
+			font-size: large;
+		}
+	}
+</style>
