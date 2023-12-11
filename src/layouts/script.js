@@ -1,4 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
+    let elemento = document.querySelector('.sliding-background');
+    var animatedElement = document.querySelector('.sliding-background');
+    let resultado1 = elemento.clientHeight - window.innerHeight + 150;
+    let resultado2 = elemento.clientHeight - window.innerHeight - 1900;
+    animatedElement.style.setProperty('--valor1', `-${resultado1}px`);
+    animatedElement.style.setProperty('--valor2', `-${resultado2}px`);
+
     const contenedorelementos = document.querySelector(".contenedorelementos");
     const elements = {
         "elementoc1": { test: testc1, id: "testc1" },
