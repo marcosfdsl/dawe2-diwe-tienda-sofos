@@ -37,10 +37,11 @@ import Title from "../components/Title.astro";
         });
 
         // Actualizar el contador del carrito (Nuevo)
-        contadorCarrito.textContent = (carrito.length / 3);
+        contadorCarrito.textContent = (carrito.length / 3).toString();
 
         // Guardar el contador en localStorage
-        localStorage.setItem("contadorCarrito", (carrito.length / 3));
+        localStorage.setItem("contadorCarrito", (carrito.length / 3).toString());
+
 
         // Agregar evento al botón de vaciar
         vaciarBtn.addEventListener("click", function () {
@@ -51,7 +52,8 @@ import Title from "../components/Title.astro";
             carritoDiv.innerHTML = "";
 
             // Actualizar el contador del carrito (Nuevo)
-            contadorCarrito.textContent = 0;
+            contadorCarrito.textContent = (0).toString();
+
 
             // Guardar el contador en localStorage
             localStorage.setItem("contadorCarrito", (0).toString());
