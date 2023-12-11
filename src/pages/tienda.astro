@@ -69,13 +69,6 @@ import c4b from "../fotos/tienda/c4b.png";
 		margin-top: 4%;
 	}
 
-	@media (min-width: 1024px) {
-		.contenedorelementos {
-			grid-template-columns: repeat(4, 1fr);
-			margin-top: 3%;
-		}
-	}
-
 	.elemento {
 		color: rgb(206, 206, 206);
 		background-color: rgba(194, 194, 194, 0.253);
@@ -97,7 +90,7 @@ import c4b from "../fotos/tienda/c4b.png";
 	}
 
 	.textoelemento {
-		font-size: large;
+		font-size: medium;
 		margin-bottom: 10%;
 	}
 
@@ -116,5 +109,16 @@ import c4b from "../fotos/tienda/c4b.png";
 	}
 	.card:hover .img-top {
 		opacity: 1;
+	}
+
+	@media (min-width: 1024px) {
+		.contenedorelementos {
+			grid-template-columns: repeat(4, 1fr);
+			margin-top: 3%;
+		}
+
+		.textoelemento {
+			font-size: large;
+		}
 	}
 </style>
