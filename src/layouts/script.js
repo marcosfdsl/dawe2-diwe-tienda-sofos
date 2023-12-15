@@ -1,12 +1,10 @@
-/*jslint browser:true */
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Obtengo el contador del carrito y establezco su valor desde el almacenamiento local
     var contadorCarrito = document.getElementById("contadorCarrito");
     var storedCounter = localStorage.getItem("contadorCarrito");
     contadorCarrito.textContent = storedCounter || (0).toString();
 
-    // Configuro el desplazamiento de fondo para un efecto visual
+
     let elemento = document.querySelector('.sliding-background');
     var animatedElement = document.querySelector('.sliding-background');
     let resultado1 = elemento.clientHeight - window.innerHeight + 150;
@@ -14,8 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
     animatedElement.style.setProperty('--valor1', `-${resultado1}px`);
     animatedElement.style.setProperty('--valor2', `-${resultado2}px`);
 
-    // Manejo eventos de clic en elementos y oculto/muestro elementos correspondientes
     document.addEventListener("click", (event) => {
+        const contenedorelementos = document.querySelector(".contenedorelementos");
         const elements = {
             "elementoc1": { test: testc1, id: "testc1" },
             "elementoc2": { test: testc2, id: "testc2" },
@@ -23,9 +21,15 @@ document.addEventListener("DOMContentLoaded", function () {
             "elementoc4": { test: testc4, id: "testc4" }
         };
 
-        // Si hago clic en uno de los elementos, lo hago desaparecer
-        // Si hago clic en cualquier otro lugar, muestro los elementos nuevamente
-        // También limpio los carritos de compras en cada caso
+        if (event.target.closest("#elementoc1") || event.target.closest("#elementoc2") || event.target.closest("#elementoc3") || event.target.closest("#elementoc4")) {
+            contenedorelementos.classList.add('disappeared');
+        } else if (event.target !== testc1 && !testc1.contains(event.target) && event.target !== testc2 && !testc2.contains(event.target) && event.target !== testc3 && !testc3.contains(event.target) && event.target !== testc4 && !testc4.contains(event.target)) {
+            contenedorelementos.classList.remove('disappeared');
+            document.getElementById("carrito").innerHTML = "";
+            document.getElementById("carritoc2").innerHTML = "";
+            document.getElementById("carritoc3").innerHTML = "";
+            document.getElementById("carritoc4").innerHTML = "";
+        }
 
         for (const key in elements) {
             const element = elements[key];
@@ -39,7 +43,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Carrusel de imágenes que cambia cada 5 segundos
+    // carousel
+
     const carouselInner = document.querySelector('.carousel-inner');
     let currentIndex = 0;
 
@@ -53,9 +58,9 @@ document.addEventListener("DOMContentLoaded", function () {
         showImage(currentIndex);
     }
 
-    setInterval(nextImage, 5000);
+    setInterval(nextImage, 5000); //cada 5s
 
-    // Restauro el contador del carrito al cargar la página
+    // Restaurar el contador del carrito al cargar la página
     var contadorCarrito = document.getElementById('contadorCarrito');
     var storedCounter = localStorage.getItem('contadorCarrito');
     var contadorActual = parseInt(storedCounter) || 0;
@@ -68,19 +73,17 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("carritoc3").innerHTML = "";
         document.getElementById("carritoc4").innerHTML = "";
 
-        // Creo nuevos elementos y los añado al inicio del carrito
         var nuevoElemento = document.createElement('div');
         var nuevoElementoc2 = document.createElement('div');
         var nuevoElementoc3 = document.createElement('div');
         var nuevoElementoc4 = document.createElement('div');
 
-        // Les asigno contenido
         nuevoElemento.textContent = 'Añadido al carrito: ' + producto + ' ' + talla;
         nuevoElementoc2.textContent = 'Añadido al carrito: ' + producto + ' ' + talla;
         nuevoElementoc3.textContent = 'Añadido al carrito: ' + producto + ' ' + talla;
         nuevoElementoc4.textContent = 'Añadido al carrito: ' + producto + ' ' + talla;
 
-        // Obtengo el div del carrito y agrego los nuevos elementos al inicio
+        // Obtener el div del carrito y agregar el nuevo elemento al inicio
         var carritoDiv = document.querySelector('#carrito');
         carritoDiv.insertBefore(nuevoElemento, carritoDiv.firstChild);
 
@@ -93,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var carritoDivc4 = document.querySelector('#carritoc4');
         carritoDivc4.insertBefore(nuevoElementoc4, carritoDivc4.firstChild);
 
-        // Obtengo el contador del carrito y lo guardo en localStorage
+        // Obtener el contador del carrito y guardarlo en localStorage
         contadorActual++;
         contadorCarrito.textContent = contadorActual;
         localStorage.setItem('contadorCarrito', contadorActual);
