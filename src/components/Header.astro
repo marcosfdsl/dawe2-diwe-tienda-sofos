@@ -4,7 +4,7 @@ import flor from "../fotos/flor.png";
 ---
 
 <div class="topnav">
-    <img class="flor" src={flor.src} alt="" />
+    <button class="botonflor" onclick="window.location.reload();"><img class="flor" src={flor.src} alt="" /></button>
     <button onclick="mostrarMenu()" class="boton"
         ><i class="fa-solid fa-bars text-2xl"></i></button
     >
@@ -32,9 +32,16 @@ import flor from "../fotos/flor.png";
         bottom: 10%;
     }
 
-    .flor {
-        padding: 4%;
+    .botonflor {
+        display: flex;
+        align-items: center;
+        margin-left: 2%;
     }
+
+    .flor {
+        height: 60%;
+    }
+
     .boton {
         padding-left: 4%;
         padding-right: 4%;
@@ -104,7 +111,7 @@ import flor from "../fotos/flor.png";
             
             align-items: center;
         }
-        .flor {
+        .botonflor {
             display: none;
         }
         .topnav a {
