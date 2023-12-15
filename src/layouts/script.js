@@ -1,10 +1,12 @@
+/*jslint browser:true */
 document.addEventListener("DOMContentLoaded", function () {
 
+    // Obtengo el contador del carrito y establezco su valor desde el almacenamiento local
     var contadorCarrito = document.getElementById("contadorCarrito");
-	var storedCounter = localStorage.getItem("contadorCarrito");
-	contadorCarrito.textContent = storedCounter || (0).toString();
+    var storedCounter = localStorage.getItem("contadorCarrito");
+    contadorCarrito.textContent = storedCounter || (0).toString();
 
-    
+    // Configuro el desplazamiento de fondo para un efecto visual
     let elemento = document.querySelector('.sliding-background');
     var animatedElement = document.querySelector('.sliding-background');
     let resultado1 = elemento.clientHeight - window.innerHeight + 150;
@@ -12,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     animatedElement.style.setProperty('--valor1', `-${resultado1}px`);
     animatedElement.style.setProperty('--valor2', `-${resultado2}px`);
 
+    // Manejo eventos de clic en elementos y oculto/muestro elementos correspondientes
     document.addEventListener("click", (event) => {
         const contenedorelementos = document.querySelector(".contenedorelementos");
         const elements = {
@@ -21,15 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
             "elementoc4": { test: testc4, id: "testc4" }
         };
 
-        if (event.target.closest("#elementoc1") || event.target.closest("#elementoc2") || event.target.closest("#elementoc3") || event.target.closest("#elementoc4")) {
-            contenedorelementos.classList.add('disappeared');
-        } else if (event.target !== testc1 && !testc1.contains(event.target) && event.target !== testc2 && !testc2.contains(event.target) && event.target !== testc3 && !testc3.contains(event.target) && event.target !== testc4 && !testc4.contains(event.target)) {
-            contenedorelementos.classList.remove('disappeared');
-            document.getElementById("carrito").innerHTML = "";
-            document.getElementById("carritoc2").innerHTML = "";
-            document.getElementById("carritoc3").innerHTML = "";
-            document.getElementById("carritoc4").innerHTML = "";
-        }
+        // Si hago clic en uno de los elementos, lo hago desaparecer
+        // Si hago clic en cualquier otro lugar, muestro los elementos nuevamente
+        // También limpio los carritos de compras en cada caso
 
         for (const key in elements) {
             const element = elements[key];
@@ -43,8 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // carousel
-
+    // Carrusel de imágenes que cambia cada 5 segundos
     const carouselInner = document.querySelector('.carousel-inner');
     let currentIndex = 0;
 
@@ -58,9 +54,9 @@ document.addEventListener("DOMContentLoaded", function () {
         showImage(currentIndex);
     }
 
-    setInterval(nextImage, 5000); //cada 5s
+    setInterval(nextImage, 5000);
 
-    // Restaurar el contador del carrito al cargar la página
+    // Restauro el contador del carrito al cargar la página
     var contadorCarrito = document.getElementById('contadorCarrito');
     var storedCounter = localStorage.getItem('contadorCarrito');
     var contadorActual = parseInt(storedCounter) || 0;
@@ -73,17 +69,19 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("carritoc3").innerHTML = "";
         document.getElementById("carritoc4").innerHTML = "";
 
+        // Creo nuevos elementos y los añado al inicio del carrito
         var nuevoElemento = document.createElement('div');
         var nuevoElementoc2 = document.createElement('div');
         var nuevoElementoc3 = document.createElement('div');
         var nuevoElementoc4 = document.createElement('div');
 
+        // Les asigno contenido
         nuevoElemento.textContent = 'Añadido al carrito: ' + producto + ' ' + talla;
         nuevoElementoc2.textContent = 'Añadido al carrito: ' + producto + ' ' + talla;
         nuevoElementoc3.textContent = 'Añadido al carrito: ' + producto + ' ' + talla;
         nuevoElementoc4.textContent = 'Añadido al carrito: ' + producto + ' ' + talla;
 
-        // Obtener el div del carrito y agregar el nuevo elemento al inicio
+        // Obtengo el div del carrito y agrego los nuevos elementos al inicio
         var carritoDiv = document.querySelector('#carrito');
         carritoDiv.insertBefore(nuevoElemento, carritoDiv.firstChild);
 
@@ -96,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var carritoDivc4 = document.querySelector('#carritoc4');
         carritoDivc4.insertBefore(nuevoElementoc4, carritoDivc4.firstChild);
 
-        // Obtener el contador del carrito y guardarlo en localStorage
+        // Obtengo el contador del carrito y lo guardo en localStorage
         contadorActual++;
         contadorCarrito.textContent = contadorActual;
         localStorage.setItem('contadorCarrito', contadorActual);
@@ -137,126 +135,103 @@ document.addEventListener("DOMContentLoaded", function () {
     // TIENDA
 
     var carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-	document
-		.getElementById("formularioCarrito")
-		.addEventListener("submit", function (event) {
-			event.preventDefault(); // Evitar el envío del formulario por defecto
+    document
+        .getElementById("formularioCarrito")
+        .addEventListener("submit", function (event) {
+            event.preventDefault();
 
-			var tallaSeleccionadaElement = document.getElementById("talla");
-			var productoSeleccionadoElement =
-				document.getElementById("producto");
-			var precioElement = document.getElementById("precio");
+            var tallaSeleccionadaElement = document.getElementById("talla");
+            var productoSeleccionadoElement =
+                document.getElementById("producto");
+            var precioElement = document.getElementById("precio");
 
-			if (tallaSeleccionadaElement instanceof HTMLSelectElement) {
-				var tallaSeleccionada = tallaSeleccionadaElement.value;
-				var productoSeleccionado = productoSeleccionadoElement.value;
-				var precio = precioElement.value;
-			} else {
-				console.error(
-					"El elemento con ID 'talla' no es un HTMLSelectElement",
-				);
-			}
+            if (tallaSeleccionadaElement instanceof HTMLSelectElement) {
+                var tallaSeleccionada = tallaSeleccionadaElement.value;
+                var productoSeleccionado = productoSeleccionadoElement.value;
+                var precio = precioElement.value;
+            }
 
-			// Agregar la talla al carrito
-			carrito.push(precio);
-			carrito.push(productoSeleccionado);
-			carrito.push(tallaSeleccionada);
+            // Agregar la talla al carrito
+            carrito.push(precio);
+            carrito.push(productoSeleccionado);
+            carrito.push(tallaSeleccionada);
 
-			// Guardar el carrito actualizado en localStorage
-			localStorage.setItem("carrito", JSON.stringify(carrito));
-		});
+            // Guardar el carrito actualizado en localStorage
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+        });
 
-	document
-		.getElementById("formularioCarritoc2")
-		.addEventListener("submit", function (event) {
-			event.preventDefault(); // Evitar el envío del formulario por defecto
+    document
+        .getElementById("formularioCarritoc2")
+        .addEventListener("submit", function (event) {
+            event.preventDefault();
 
-			var tallaSeleccionadaElement = document.getElementById("tallac2");
-			var productoSeleccionadoElement =
-				document.getElementById("productoc2");
-			var precioElement = document.getElementById("precioc2");
+            var tallaSeleccionadaElement = document.getElementById("tallac2");
+            var productoSeleccionadoElement =
+                document.getElementById("productoc2");
+            var precioElement = document.getElementById("precioc2");
 
-			if (tallaSeleccionadaElement instanceof HTMLSelectElement) {
-				var tallaSeleccionada = tallaSeleccionadaElement.value;
-				var productoSeleccionado = productoSeleccionadoElement.value;
-				var precio = precioElement.value;
-			} else {
-				console.error(
-					"El elemento con ID 'talla' no es un HTMLSelectElement",
-				);
-			}
+            if (tallaSeleccionadaElement instanceof HTMLSelectElement) {
+                var tallaSeleccionada = tallaSeleccionadaElement.value;
+                var productoSeleccionado = productoSeleccionadoElement.value;
+                var precio = precioElement.value;
+            }
 
-			// Agregar la talla al carrito
-			carrito.push(precio);
-			carrito.push(productoSeleccionado);
-			carrito.push(tallaSeleccionada);
+            // Agregar la talla al carrito
+            carrito.push(precio);
+            carrito.push(productoSeleccionado);
+            carrito.push(tallaSeleccionada);
 
-			// Guardar el carrito actualizado en localStorage
-			localStorage.setItem("carrito", JSON.stringify(carrito));
-		});
+            // Guardar el carrito actualizado en localStorage
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+        });
 
-	document
-		.getElementById("formularioCarritoc3")
-		.addEventListener("submit", function (event) {
-			event.preventDefault(); // Evitar el envío del formulario por defecto
+    document
+        .getElementById("formularioCarritoc3")
+        .addEventListener("submit", function (event) {
+            event.preventDefault();
 
-			var tallaSeleccionadaElement = document.getElementById("tallac3");
-			var productoSeleccionadoElement =
-				document.getElementById("productoc3");
-			var precioElement = document.getElementById("precioc3");
+            var tallaSeleccionadaElement = document.getElementById("tallac3");
+            var productoSeleccionadoElement =
+                document.getElementById("productoc3");
+            var precioElement = document.getElementById("precioc3");
 
-			if (tallaSeleccionadaElement instanceof HTMLSelectElement) {
-				var tallaSeleccionada = tallaSeleccionadaElement.value;
-				var productoSeleccionado = productoSeleccionadoElement.value;
-				var precio = precioElement.value;
-			} else {
-				console.error(
-					"El elemento con ID 'talla' no es un HTMLSelectElement",
-				);
-			}
+            if (tallaSeleccionadaElement instanceof HTMLSelectElement) {
+                var tallaSeleccionada = tallaSeleccionadaElement.value;
+                var productoSeleccionado = productoSeleccionadoElement.value;
+                var precio = precioElement.value;
+            }
 
-			// Agregar la talla al carrito
-			carrito.push(precio);
-			carrito.push(productoSeleccionado);
-			carrito.push(tallaSeleccionada);
+            // Agregar la talla al carrito
+            carrito.push(precio);
+            carrito.push(productoSeleccionado);
+            carrito.push(tallaSeleccionada);
 
-			// Guardar el carrito actualizado en localStorage
-			localStorage.setItem("carrito", JSON.stringify(carrito));
-		});
+            // Guardar el carrito actualizado en localStorage
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+        });
 
-	document
-		.getElementById("formularioCarritoc4")
-		.addEventListener("submit", function (event) {
-			event.preventDefault(); // Evitar el envío del formulario por defecto
+    document
+        .getElementById("formularioCarritoc4")
+        .addEventListener("submit", function (event) {
+            event.preventDefault();
 
-			var tallaSeleccionadaElement = document.getElementById("tallac4");
-			var productoSeleccionadoElement =
-				document.getElementById("productoc4");
-			var precioElement = document.getElementById("precioc4");
+            var tallaSeleccionadaElement = document.getElementById("tallac4");
+            var productoSeleccionadoElement =
+                document.getElementById("productoc4");
+            var precioElement = document.getElementById("precioc4");
 
-			if (tallaSeleccionadaElement instanceof HTMLSelectElement) {
-				var tallaSeleccionada = tallaSeleccionadaElement.value;
-				var productoSeleccionado = productoSeleccionadoElement.value;
-				var precio = precioElement.value;
-			} else {
-				console.error(
-					"El elemento con ID 'talla' no es un HTMLSelectElement",
-				);
-			}
+            if (tallaSeleccionadaElement instanceof HTMLSelectElement) {
+                var tallaSeleccionada = tallaSeleccionadaElement.value;
+                var productoSeleccionado = productoSeleccionadoElement.value;
+                var precio = precioElement.value;
+            }
 
-			// Agregar la talla al carrito
-			carrito.push(precio);
-			carrito.push(productoSeleccionado);
-			carrito.push(tallaSeleccionada);
+            // Agregar la talla al carrito
+            carrito.push(precio);
+            carrito.push(productoSeleccionado);
+            carrito.push(tallaSeleccionada);
 
-			// Guardar el carrito actualizado en localStorage
-			localStorage.setItem("carrito", JSON.stringify(carrito));
-		});
-
-	var contadorCarrito = document.getElementById("contadorCarrito");
-	var storedCounter = localStorage.getItem("contadorCarrito");
-	contadorCarrito.textContent = storedCounter || (0).toString();
-
-    //
-
+            // Guardar el carrito actualizado en localStorage
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+        });
 });
