@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Manejo eventos de clic en elementos y oculto/muestro elementos correspondientes
     document.addEventListener("click", (event) => {
-        const contenedorelementos = document.querySelector(".contenedorelementos");
         const elements = {
             "elementoc1": { test: testc1, id: "testc1" },
             "elementoc2": { test: testc2, id: "testc2" },
