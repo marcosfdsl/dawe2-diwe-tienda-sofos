@@ -1,11 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+    var contadorCarrito = document.getElementById("contadorCarrito");
+	var storedCounter = localStorage.getItem("contadorCarrito");
+	contadorCarrito.textContent = storedCounter || (0).toString();
+
+    
     let elemento = document.querySelector('.sliding-background');
     var animatedElement = document.querySelector('.sliding-background');
     let resultado1 = elemento.clientHeight - window.innerHeight + 150;
     let resultado2 = elemento.clientHeight - window.innerHeight - 1900;
     animatedElement.style.setProperty('--valor1', `-${resultado1}px`);
     animatedElement.style.setProperty('--valor2', `-${resultado2}px`);
-
 
     document.addEventListener("click", (event) => {
         const contenedorelementos = document.querySelector(".contenedorelementos");
@@ -15,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "elementoc3": { test: testc3, id: "testc3" },
             "elementoc4": { test: testc4, id: "testc4" }
         };
+
         if (event.target.closest("#elementoc1") || event.target.closest("#elementoc2") || event.target.closest("#elementoc3") || event.target.closest("#elementoc4")) {
             contenedorelementos.classList.add('disappeared');
         } else if (event.target !== testc1 && !testc1.contains(event.target) && event.target !== testc2 && !testc2.contains(event.target) && event.target !== testc3 && !testc3.contains(event.target) && event.target !== testc4 && !testc4.contains(event.target)) {
@@ -97,43 +103,160 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Evento para formularioCarrito
-    if (document.getElementById('formularioCarrito')) {
-        document.getElementById('formularioCarrito').addEventListener('submit', function (event) {
-            event.preventDefault();
-            var tallaSeleccionada = document.getElementById('talla').value;
-            var productoSeleccionado = document.getElementById('producto').value;
-            agregarAlCarrito(tallaSeleccionada, productoSeleccionado);
-        });
-    }
+    document.getElementById('formularioCarrito').addEventListener('submit', function (event) {
+        event.preventDefault();
+        var tallaSeleccionada = document.getElementById('talla').value;
+        var productoSeleccionado = document.getElementById('producto').value;
+        agregarAlCarrito(tallaSeleccionada, productoSeleccionado);
+    });
 
     // Evento para formularioCarritoc2
-    if (document.getElementById('formularioCarrito2')) {
-        document.getElementById('formularioCarritoc2').addEventListener('submit', function (event) {
-            event.preventDefault();
-            var tallaSeleccionada = document.getElementById('tallac2').value;
-            var productoSeleccionado = document.getElementById('productoc2').value;
-            agregarAlCarrito(tallaSeleccionada, productoSeleccionado);
-        });
-    }
+    document.getElementById('formularioCarritoc2').addEventListener('submit', function (event) {
+        event.preventDefault();
+        var tallaSeleccionada = document.getElementById('tallac2').value;
+        var productoSeleccionado = document.getElementById('productoc2').value;
+        agregarAlCarrito(tallaSeleccionada, productoSeleccionado);
+    });
 
     // Evento para formularioCarritoc3
-    if (document.getElementById('formularioCarrito3')) {
-        document.getElementById('formularioCarritoc3').addEventListener('submit', function (event) {
-            event.preventDefault();
-            var tallaSeleccionada = document.getElementById('tallac3').value;
-            var productoSeleccionado = document.getElementById('productoc3').value;
-            agregarAlCarrito(tallaSeleccionada, productoSeleccionado);
-        });
-    }
+    document.getElementById('formularioCarritoc3').addEventListener('submit', function (event) {
+        event.preventDefault();
+        var tallaSeleccionada = document.getElementById('tallac3').value;
+        var productoSeleccionado = document.getElementById('productoc3').value;
+        agregarAlCarrito(tallaSeleccionada, productoSeleccionado);
+    });
 
     // Evento para formularioCarritoc4
-    if (document.getElementById('formularioCarrito4')) {
-        document.getElementById('formularioCarritoc4').addEventListener('submit', function (event) {
-            event.preventDefault();
-            var tallaSeleccionada = document.getElementById('tallac4').value;
-            var productoSeleccionado = document.getElementById('productoc4').value;
-            agregarAlCarrito(tallaSeleccionada, productoSeleccionado);
-        });
-    }
+    document.getElementById('formularioCarritoc4').addEventListener('submit', function (event) {
+        event.preventDefault();
+        var tallaSeleccionada = document.getElementById('tallac4').value;
+        var productoSeleccionado = document.getElementById('productoc4').value;
+        agregarAlCarrito(tallaSeleccionada, productoSeleccionado);
+    });
+
+    // TIENDA
+
+    var carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+	document
+		.getElementById("formularioCarrito")
+		.addEventListener("submit", function (event) {
+			event.preventDefault(); // Evitar el envío del formulario por defecto
+
+			var tallaSeleccionadaElement = document.getElementById("talla");
+			var productoSeleccionadoElement =
+				document.getElementById("producto");
+			var precioElement = document.getElementById("precio");
+
+			if (tallaSeleccionadaElement instanceof HTMLSelectElement) {
+				var tallaSeleccionada = tallaSeleccionadaElement.value;
+				var productoSeleccionado = productoSeleccionadoElement.value;
+				var precio = precioElement.value;
+			} else {
+				console.error(
+					"El elemento con ID 'talla' no es un HTMLSelectElement",
+				);
+			}
+
+			// Agregar la talla al carrito
+			carrito.push(precio);
+			carrito.push(productoSeleccionado);
+			carrito.push(tallaSeleccionada);
+
+			// Guardar el carrito actualizado en localStorage
+			localStorage.setItem("carrito", JSON.stringify(carrito));
+		});
+
+	document
+		.getElementById("formularioCarritoc2")
+		.addEventListener("submit", function (event) {
+			event.preventDefault(); // Evitar el envío del formulario por defecto
+
+			var tallaSeleccionadaElement = document.getElementById("tallac2");
+			var productoSeleccionadoElement =
+				document.getElementById("productoc2");
+			var precioElement = document.getElementById("precioc2");
+
+			if (tallaSeleccionadaElement instanceof HTMLSelectElement) {
+				var tallaSeleccionada = tallaSeleccionadaElement.value;
+				var productoSeleccionado = productoSeleccionadoElement.value;
+				var precio = precioElement.value;
+			} else {
+				console.error(
+					"El elemento con ID 'talla' no es un HTMLSelectElement",
+				);
+			}
+
+			// Agregar la talla al carrito
+			carrito.push(precio);
+			carrito.push(productoSeleccionado);
+			carrito.push(tallaSeleccionada);
+
+			// Guardar el carrito actualizado en localStorage
+			localStorage.setItem("carrito", JSON.stringify(carrito));
+		});
+
+	document
+		.getElementById("formularioCarritoc3")
+		.addEventListener("submit", function (event) {
+			event.preventDefault(); // Evitar el envío del formulario por defecto
+
+			var tallaSeleccionadaElement = document.getElementById("tallac3");
+			var productoSeleccionadoElement =
+				document.getElementById("productoc3");
+			var precioElement = document.getElementById("precioc3");
+
+			if (tallaSeleccionadaElement instanceof HTMLSelectElement) {
+				var tallaSeleccionada = tallaSeleccionadaElement.value;
+				var productoSeleccionado = productoSeleccionadoElement.value;
+				var precio = precioElement.value;
+			} else {
+				console.error(
+					"El elemento con ID 'talla' no es un HTMLSelectElement",
+				);
+			}
+
+			// Agregar la talla al carrito
+			carrito.push(precio);
+			carrito.push(productoSeleccionado);
+			carrito.push(tallaSeleccionada);
+
+			// Guardar el carrito actualizado en localStorage
+			localStorage.setItem("carrito", JSON.stringify(carrito));
+		});
+
+	document
+		.getElementById("formularioCarritoc4")
+		.addEventListener("submit", function (event) {
+			event.preventDefault(); // Evitar el envío del formulario por defecto
+
+			var tallaSeleccionadaElement = document.getElementById("tallac4");
+			var productoSeleccionadoElement =
+				document.getElementById("productoc4");
+			var precioElement = document.getElementById("precioc4");
+
+			if (tallaSeleccionadaElement instanceof HTMLSelectElement) {
+				var tallaSeleccionada = tallaSeleccionadaElement.value;
+				var productoSeleccionado = productoSeleccionadoElement.value;
+				var precio = precioElement.value;
+			} else {
+				console.error(
+					"El elemento con ID 'talla' no es un HTMLSelectElement",
+				);
+			}
+
+			// Agregar la talla al carrito
+			carrito.push(precio);
+			carrito.push(productoSeleccionado);
+			carrito.push(tallaSeleccionada);
+
+			// Guardar el carrito actualizado en localStorage
+			localStorage.setItem("carrito", JSON.stringify(carrito));
+		});
+
+	var contadorCarrito = document.getElementById("contadorCarrito");
+	var storedCounter = localStorage.getItem("contadorCarrito");
+	contadorCarrito.textContent = storedCounter || (0).toString();
+
+    //
 
 });
